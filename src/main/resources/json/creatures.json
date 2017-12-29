@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Pikeman",
+    "race": "HUMAN",
+    "type": "INFANTRY",
+    "armor": "HEAVY",
+    "health": "HIGH",
+    "weapons": [
+      "PIKE"
+    ]
+  },
+  {
+    "name": "Longswordman",
+    "race": "HUMAN",
+    "type": "INFANTRY",
+    "armor": "HEAVY",
+    "health": "HIGH",
+    "weapons": [
+      "LONGSWORD_SHIELD"
+    ]
+  },
+  {
+    "name": "Crossbowman",
+    "race": "HUMAN",
+    "type": "ARCHER",
+    "armor": "MEDIUM",
+    "health": "MODERATE",
+    "weapons": [
+      "CROSSBOW"
+    ]
+  }
+]
