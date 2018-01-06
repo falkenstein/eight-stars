@@ -6,9 +6,9 @@ package cz.tadea.creature.enums
 enum class EHealthAmount(
         val hp: Int
 ) {
-    MINOR(150),
-    SMALL(200),
-    MODERATE(250),
-    HIGH(300),
-    VERY_HIGH(400)
+    MINOR(75),
+    SMALL(100),
+    MODERATE(125),
+    HIGH(150),
+    VERY_HIGH(200)
 }

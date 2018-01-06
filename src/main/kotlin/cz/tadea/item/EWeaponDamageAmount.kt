@@ -10,5 +10,9 @@ enum class EWeaponDamageAmount(
     SMALL(20),
     MODERATE(25),
     HIGH(30),
-    VERY_HIGH(40)
+    VERY_HIGH(40);
+
+    companion object {
+        const val MINIMUM_DAMAGE: Int = 5
+    }
 }

@@ -144,6 +144,12 @@ class Attack(
         if (target.getArmor().isHeavierThan(weapon.category.armorEffectiveness)) { // Damage halved for ineffective weapon vs armor.
             damage /= 2
         }
+        damage -= target.getArmor().damageReduction
+
+        if (damage < EWeaponDamageAmount.MINIMUM_DAMAGE) {
+            damage = EWeaponDamageAmount.MINIMUM_DAMAGE
+        }
+
         return damage
     }
 }
