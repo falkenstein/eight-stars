@@ -80,7 +80,7 @@ class AttackTest : AbstractTest() {
         val hpBefore = creatureB.hp
         battlefield.useAbility(creatureA, EAbility.ATTACK, creatureB)
         assertTrue(hpBefore > creatureB.hp)
-        for (i in 0..20) { // Should be more than enough to kill the target
+        for (i in 0..30) { // Should be more than enough to kill the target
             if (creatureB.alive) {
                 battlefield.useAbility(creatureA, EAbility.ATTACK, creatureB)
             }

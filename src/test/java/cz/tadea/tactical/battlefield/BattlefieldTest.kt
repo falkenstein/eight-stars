@@ -36,8 +36,7 @@ class BattlefieldTest : AbstractTest() {
     fun testInsertCreature() {
         TemplateStore.scanTemplates()
         val creature = CreatureTactical(testPlayer, TemplateStore.getCreature("Pikeman"))
-        battlefield.moveCreature(creature, 0, 0)
-        battlefield.moveCreature(creature, 3, 0)
+        battlefield.initializeCreature(creature, 0, 0)
         try {
             battlefield.moveCreature(creature, 7, 0)
             fail("Exception should have come up because of impossible zone.")

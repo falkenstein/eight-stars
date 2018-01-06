@@ -4,5 +4,9 @@ enum class EArmorType {
     NONE,
     LIGHT,
     MEDIUM,
-    HEAVY
+    HEAVY;
+
+    fun isHeavierThan(type: EArmorType): Boolean {
+        return this.ordinal > type.ordinal
+    }
 }

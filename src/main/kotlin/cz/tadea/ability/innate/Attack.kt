@@ -3,6 +3,7 @@ package cz.tadea.ability.innate
 import cz.tadea.ability.Ability
 import cz.tadea.ability.EAbility
 import cz.tadea.exception.CannotUseAbilityException
+import cz.tadea.item.EWeaponDamageAmount
 import cz.tadea.item.EWeaponStyle
 import cz.tadea.item.EWeaponType
 import cz.tadea.tactical.EDamageType
@@ -130,8 +131,19 @@ class Attack(
         } else {
             user.weapons.first { weapon -> weapon.style == EWeaponStyle.RANGED }
         }
-        allDamage.add(Triple(usedWeapon.baseDamageType, usedWeapon.damage.damage, "Base weapon damage."))
+        allDamage.add(Triple(usedWeapon.baseDamageType, calculateWeaponDamage(user, targetCreature, usedWeapon), "Base weapon damage."))
 
         battlefield.damageCreature(targetCreature, allDamage, user)
+    }
+
+    /**
+     * Calculates the damage inflicted by given weapon.
+     */
+    protected fun calculateWeaponDamage(user: CreatureTactical, target: CreatureTactical, weapon: EWeaponType): Int {
+        var damage = weapon.damage.damage // We begin with weapon's base damage.
+        if (target.getArmor().isHeavierThan(weapon.category.armorEffectiveness)) { // Damage halved for ineffective weapon vs armor.
+            damage /= 2
+        }
+        return damage
     }
 }

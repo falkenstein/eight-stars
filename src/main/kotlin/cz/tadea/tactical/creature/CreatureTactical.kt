@@ -2,8 +2,10 @@ package cz.tadea.tactical.creature
 
 import cz.tadea.ability.Ability
 import cz.tadea.ability.EAbility
+import cz.tadea.creature.enums.EArmorType
 import cz.tadea.creature.enums.ECreatureFlag
 import cz.tadea.creature.enums.EDamageResistanceType
+import cz.tadea.creature.enums.EUnitType
 import cz.tadea.item.EWeaponType
 import cz.tadea.player.Player
 import cz.tadea.tactical.EDamageType
@@ -15,7 +17,7 @@ import cz.tadea.template.CreatureTemplate
  */
 class CreatureTactical(
         val owner: Player,
-        val template: CreatureTemplate
+        private val template: CreatureTemplate
 ) {
     private val flags: MutableList<CreatureFlag> = mutableListOf()
     /**
@@ -94,5 +96,16 @@ class CreatureTactical(
 
     override fun toString(): String {
         return name
+    }
+
+    /**
+     * Calculates armor of the creature. TODO: Take buffs and debuffs into account.
+     */
+    fun getArmor(): EArmorType {
+        return template.armor
+    }
+
+    fun getType(): EUnitType {
+        return template.type
     }
 }

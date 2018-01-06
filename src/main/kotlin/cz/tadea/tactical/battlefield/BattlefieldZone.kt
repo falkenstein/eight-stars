@@ -34,4 +34,8 @@ class BattlefieldZone(
      */
     fun onCreatureEntered() {
     }
+
+    override fun toString(): String {
+        return "[$x,$y]"
+    }
 }
