@@ -38,4 +38,10 @@ class BattlefieldZone(
     override fun toString(): String {
         return "[$x,$y]"
     }
+
+    fun onEndTurn() {
+        if (creature != null) {
+            creature!!.onEndTurn()
+        }
+    }
 }

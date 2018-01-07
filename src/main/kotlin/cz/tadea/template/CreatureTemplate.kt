@@ -1,5 +1,6 @@
 package cz.tadea.template
 
+import cz.tadea.ability.EAbility
 import cz.tadea.creature.enums.*
 import cz.tadea.item.EWeaponType
 import cz.tadea.tactical.EDamageType
@@ -15,6 +16,7 @@ class CreatureTemplate(
         val health: EHealthAmount,
         val weapons: Set<EWeaponType>,
         val flags: Set<ECreatureFlag> = emptySet(),
-        val resistances: Map<EDamageType, EDamageResistanceType> = emptyMap()
+        val resistances: Map<EDamageType, EDamageResistanceType> = emptyMap(),
+        val abilities: Set<EAbility> = emptySet()
 ) {
 }

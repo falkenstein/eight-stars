@@ -14,10 +14,15 @@ class Defend(
         user: CreatureTactical,
         battlefield: Battlefield
 ) : Ability(user, battlefield) {
+
+    companion object {
+        const val DAMAGE_REDUCTION: Int = 20
+    }
+
     override val associatedEnum = EAbility.DEFEND
 
     override fun canBeUsed(): Boolean {
-        return user.hasFlag(ECreatureFlag.CAN_DEFEND)
+        return true
     }
 
     override fun getValidTargets(): List<BattlefieldZone> {
@@ -25,6 +30,6 @@ class Defend(
     }
 
     override fun execute(target: BattlefieldZone?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        user.addFlag(ECreatureFlag.DEFEND, duration = 1)
     }
 }

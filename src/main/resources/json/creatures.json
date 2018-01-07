@@ -28,5 +28,18 @@
     "weapons": [
       "CROSSBOW"
     ]
+  },
+  {
+    "name": "Captain",
+    "race": "HUMAN",
+    "type": "COMMANDER",
+    "armor": "MEDIUM",
+    "health": "MODERATE",
+    "weapons": [
+      "LONGSWORD_SHIELD"
+    ],
+    "abilities": [
+      "DEFEND_COMMAND"
+    ]
   }
 ]

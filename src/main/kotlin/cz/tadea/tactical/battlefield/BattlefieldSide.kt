@@ -1,5 +1,6 @@
 package cz.tadea.tactical.battlefield
 
+import cz.tadea.ability.Ability
 import cz.tadea.player.Player
 import cz.tadea.tactical.creature.CreatureTactical
 
@@ -12,6 +13,7 @@ class BattlefieldSide(
 ) {
     val frontRow: Map<Int, BattlefieldZone> = setupRow(0)
     val backRow: Map<Int, BattlefieldZone> = setupRow(1)
+    private val selectedAbilities: MutableMap<CreatureTactical, Ability?> = mutableMapOf()
 
     private fun setupRow(y: Int): Map<Int, BattlefieldZone> {
         val row: MutableMap<Int, BattlefieldZone> = mutableMapOf()
@@ -93,6 +95,21 @@ class BattlefieldSide(
             getZone(xPosition + 1, yPosition)
         } else {
             getZone(xPosition - 1, yPosition)
+        }
+    }
+
+    fun onEndTurn() {
+        // Reset selected abilities.
+        selectedAbilities.keys.forEach { key -> selectedAbilities.put(key, null) }
+        getAllZones().forEach { zone -> zone.onEndTurn() }
+    }
+
+    /**
+     * Selects given ability for the given creature. Checks if the creature exists on the field and if it already doesn't have an ability assigned.
+     */
+    fun selectAbility(creature: CreatureTactical, ability: Ability) {
+        if (selectedAbilities[creature] == null && getAllZones().any { zone -> zone.creature == creature }) {
+            selectedAbilities.put(creature, ability)
         }
     }
 }

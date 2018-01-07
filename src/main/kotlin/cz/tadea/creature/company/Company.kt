@@ -1,11 +1,16 @@
 package cz.tadea.creature.company
 
+import cz.tadea.player.Player
 import cz.tadea.template.CreatureTemplate
 
 /**
  * Company - consists of a small amount of creatures. Doesn't figure on tactical layer, as there it is just about individual creatures.
  */
 class Company(
+        /**
+         * Player that owns this company.
+         */
+        val owner: Player,
         /**
          * Front line is composed of two pairs of the same creature type (of course all four can be also the same).
          */

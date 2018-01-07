@@ -75,6 +75,15 @@ class CreatureTactical(
         return flags.any { fl -> fl.flag == flag }
     }
 
+    fun addFlag(flag: ECreatureFlag, duration: Int = 0, temporary: Boolean = true) {
+        val existingFlag = flags.find { fl -> fl.flag == flag }
+        if (existingFlag != null && existingFlag.temporary && temporary) {
+            existingFlag.duration = maxOf(duration, existingFlag.duration)
+        } else if (existingFlag == null) {
+            flags.add(CreatureFlag(flag, duration = duration, temporary = temporary))
+        }
+    }
+
     /**
      * Returns ability required by the given enum, if the creature has it. Exception otherwise.
      */

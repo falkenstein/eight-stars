@@ -2,6 +2,7 @@ package cz.tadea.ability.innate
 
 import cz.tadea.ability.Ability
 import cz.tadea.ability.EAbility
+import cz.tadea.creature.enums.ECreatureFlag
 import cz.tadea.exception.CannotUseAbilityException
 import cz.tadea.item.EWeaponDamageAmount
 import cz.tadea.item.EWeaponStyle
@@ -145,6 +146,10 @@ class Attack(
             damage /= 2
         }
         damage -= target.getArmor().damageReduction
+
+        if (target.hasFlag(ECreatureFlag.DEFEND)) {
+            damage -= Defend.DAMAGE_REDUCTION
+        }
 
         if (damage < EWeaponDamageAmount.MINIMUM_DAMAGE) {
             damage = EWeaponDamageAmount.MINIMUM_DAMAGE

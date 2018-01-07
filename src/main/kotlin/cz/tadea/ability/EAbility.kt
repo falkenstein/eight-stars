@@ -1,5 +1,6 @@
 package cz.tadea.ability
 
+import cz.tadea.ability.command.DefendCommand
 import cz.tadea.ability.innate.Attack
 import cz.tadea.ability.innate.Defend
 import cz.tadea.tactical.creature.CreatureTactical
@@ -34,6 +35,13 @@ enum class EAbility(
     ) {
         override fun getInstance(user: CreatureTactical, battlefield: Battlefield): Ability {
             return Defend(user, battlefield)
+        }
+    },
+    DEFEND_COMMAND(
+            cooldown = 0
+    ) {
+        override fun getInstance(user: CreatureTactical, battlefield: Battlefield): Ability {
+            return DefendCommand(user, battlefield)
         }
     };
 

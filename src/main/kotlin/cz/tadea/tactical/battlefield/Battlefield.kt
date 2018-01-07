@@ -1,6 +1,7 @@
 package cz.tadea.tactical.battlefield
 
 import cz.tadea.ability.EAbility
+import cz.tadea.creature.company.Company
 import cz.tadea.creature.enums.ECreatureFlag
 import cz.tadea.creature.enums.EDamageResistanceType
 import cz.tadea.creature.enums.EUnitType
@@ -102,6 +103,21 @@ class Battlefield(
         }
     }
 
+    fun initializeCompany(company: Company) {
+        for (i in 0..company.front.size) {
+            initializeCreature(CreatureTactical(company.owner, company.front[i]), i + 1, 0)
+        }
+        val commanderXPosition = sides[company.owner]!!.size / 2
+        for (i in 0..company.back.size) {
+            if (i + 1 != commanderXPosition) {
+                initializeCreature(CreatureTactical(company.owner, company.back[i]), i + 1, 1)
+            } else {
+                initializeCreature(CreatureTactical(company.owner, company.back[i]), i + 2, 1)
+            }
+        }
+        initializeCreature(CreatureTactical(company.owner, company.commander), commanderXPosition, 1)
+    }
+
     /**
      * Prepares set of zones to which the given creature can move.
      */
@@ -116,18 +132,18 @@ class Battlefield(
         }
     }
 
-    fun useAbility(creature: CreatureTactical, abilityEnum: EAbility, target: CreatureTactical) {
-        useAbility(creature, abilityEnum, getZoneOfCreature(target))
+    fun useAbility(creature: CreatureTactical, abilityEnum: EAbility, targetCreature: CreatureTactical) {
+        useAbility(creature, abilityEnum, getZoneOfCreature(targetCreature))
     }
 
-    fun useAbility(creature: CreatureTactical, abilityEnum: EAbility, target: BattlefieldZone?) {
+    fun useAbility(creature: CreatureTactical, abilityEnum: EAbility, targetZone: BattlefieldZone?) {
         val ability = creature.getAbility(abilityEnum)
         if (ability.canBeUsed()) {
             if (abilityEnum.requiresTarget) {
-                if (ability.getValidTargets().contains(target)) {
-                    ability.execute(target)
+                if (ability.getValidTargets().contains(targetZone)) {
+                    ability.execute(targetZone)
                 } else {
-                    throw CannotUseAbilityException("Provided target $target for ability $abilityEnum is not valid.")
+                    throw CannotUseAbilityException("Provided target $targetZone for ability $abilityEnum is not valid.")
                 }
             } else {
                 ability.execute(null)
@@ -170,5 +186,12 @@ class Battlefield(
         killed.die()
         zone.creature = null
         println("$killed was killed by $originator.")
+    }
+
+    /**
+     * Executed on the end of each turn. Does all the duration effects.
+     */
+    fun onEndTurn() {
+        sides.values.forEach { side -> side.onEndTurn() }
     }
 }

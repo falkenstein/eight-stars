@@ -9,7 +9,7 @@ enum class ECreatureFlag {
      */
     RUNNER,
     /**
-     * Lets the creature defend.
+     * The creature is defending.
      */
-    CAN_DEFEND
+    DEFEND
 }
