@@ -117,4 +117,11 @@ class CreatureTactical(
     fun getType(): EUnitType {
         return template.type
     }
+
+    /**
+     * Returns initiative as a numeric value.
+     */
+    fun getInitiative(): Int {
+        return template.initiative.value
+    }
 }

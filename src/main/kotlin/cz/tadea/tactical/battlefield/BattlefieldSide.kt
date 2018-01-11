@@ -1,6 +1,8 @@
 package cz.tadea.tactical.battlefield
 
 import cz.tadea.ability.Ability
+import cz.tadea.ability.EAbility
+import cz.tadea.ability.EAbilityPriority
 import cz.tadea.player.Player
 import cz.tadea.tactical.creature.CreatureTactical
 
@@ -111,5 +113,31 @@ class BattlefieldSide(
         if (selectedAbilities[creature] == null && getAllZones().any { zone -> zone.creature == creature }) {
             selectedAbilities.put(creature, ability)
         }
+    }
+
+    /**
+     * Called after turn preparation is finished by player - selects default abilities for all present creatures that do not have any ability set yet.
+     */
+    fun selectDefaultAbilities() {
+        getAllZones().forEach { zone ->
+            val creature = zone.creature
+            if (creature != null && selectedAbilities[creature] == null) {
+                // Means we can assign default ability.
+                val attack = creature.getAbility(EAbility.ATTACK)
+                if (attack.canBeUsed()) {
+                    selectAbility(creature, attack)
+                } else {
+                    selectAbility(creature, creature.getAbility(EAbility.DEFEND))
+                }
+            }
+        }
+    }
+
+    fun getCreaturesThatHaveSelectedAbilityWithPriority(priority: EAbilityPriority): List<CreatureTactical> {
+        return selectedAbilities.keys.filter { creature -> selectedAbilities[creature]!!.associatedEnum.priority == priority }
+    }
+
+    fun getAbilitySelectedByCreature(creature: CreatureTactical): Ability {
+        return selectedAbilities[creature] ?: throw IllegalArgumentException("There is no ability for the given creature.")
     }
 }

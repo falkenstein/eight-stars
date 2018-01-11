@@ -104,11 +104,11 @@ class Battlefield(
     }
 
     fun initializeCompany(company: Company) {
-        for (i in 0..company.front.size) {
+        for (i in 0 until company.front.size) {
             initializeCreature(CreatureTactical(company.owner, company.front[i]), i + 1, 0)
         }
         val commanderXPosition = sides[company.owner]!!.size / 2
-        for (i in 0..company.back.size) {
+        for (i in 0 until company.back.size) {
             if (i + 1 != commanderXPosition) {
                 initializeCreature(CreatureTactical(company.owner, company.back[i]), i + 1, 1)
             } else {

@@ -5,6 +5,7 @@
     "type": "INFANTRY",
     "armor": "HEAVY",
     "health": "HIGH",
+    "initiative": "VERY_SLOW",
     "weapons": [
       "PIKE"
     ]
@@ -15,6 +16,7 @@
     "type": "INFANTRY",
     "armor": "HEAVY",
     "health": "HIGH",
+    "initiative": "VERY_SLOW",
     "weapons": [
       "LONGSWORD_SHIELD"
     ]
@@ -25,6 +27,7 @@
     "type": "ARCHER",
     "armor": "MEDIUM",
     "health": "MODERATE",
+    "initiative": "SLOW",
     "weapons": [
       "CROSSBOW"
     ]

@@ -13,6 +13,10 @@ abstract class Ability(
         val battlefield: Battlefield
 ) {
     abstract val associatedEnum: EAbility
+    /**
+     * Starts at 0. Not every ability type even takes it into consideration.
+     */
+    protected var cooldown: Int = 0
 
     /**
      * Determines whether the ability can currently be used.
@@ -35,5 +39,11 @@ abstract class Ability(
 
     protected fun getOwnBattlefieldSide(): BattlefieldSide {
         return battlefield.sides[user.owner]!!
+    }
+
+    fun onEndTurn() {
+        if (cooldown > 0) {
+            cooldown--
+        }
     }
 }
