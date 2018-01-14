@@ -1,6 +1,7 @@
 package cz.tadea.creature.company
 
 import cz.tadea.player.Player
+import cz.tadea.singleton.TemplateStore
 import cz.tadea.template.CreatureTemplate
 
 /**
@@ -24,4 +25,10 @@ class Company(
          */
         val commander: CreatureTemplate
 ) {
+    constructor(player: Player, creatures: List<String>) : this(
+            player,
+            front = creatures.take(4).map { TemplateStore.getCreature(it) },
+            back = creatures.drop(5).map { TemplateStore.getCreature(it) }, // Drops 4 front creatures and commander
+            commander = TemplateStore.getCreature(creatures[4])
+    )
 }

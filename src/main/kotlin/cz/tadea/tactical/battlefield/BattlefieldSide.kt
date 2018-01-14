@@ -140,4 +140,11 @@ class BattlefieldSide(
     fun getAbilitySelectedByCreature(creature: CreatureTactical): Ability {
         return selectedAbilities[creature] ?: throw IllegalArgumentException("There is no ability for the given creature.")
     }
+
+    /**
+     * Returns list of all surviving creatures on this side of the battlefield.
+     */
+    fun getAllLivingCreatures(): List<CreatureTactical> {
+        return getAllZones().filter { zone -> zone.creature != null && zone.creature!!.alive }.map { zone -> zone.creature!! }
+    }
 }

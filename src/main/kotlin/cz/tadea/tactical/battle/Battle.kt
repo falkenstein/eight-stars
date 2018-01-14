@@ -29,8 +29,23 @@ class Battle(
         battlefield.sides.values.forEach { side -> side.selectDefaultAbilities() }
 
         // Now evaluate all abilities by their order. The ones with preemptive priority come first.
-        val preemptiveCreatures: List<CreatureTactical> = battlefield.sides.values.flatMap { side ->
-            side.getCreaturesThatHaveSelectedAbilityWithPriority(EAbilityPriority.PREEMPTIVE)
+        val preemptiveCreatures = getCreaturesWithSelectedAbilityByPriority(EAbilityPriority.PREEMPTIVE)
+        executeSelectedAbilitiesForCreatures(preemptiveCreatures)
+
+        // High priority now
+        val highPriorityCreatures = getCreaturesWithSelectedAbilityByPriority(EAbilityPriority.HIGH)
+        executeSelectedAbilitiesForCreatures(highPriorityCreatures)
+
+        // Standard priority
+        val standardPriorityCreatures = getCreaturesWithSelectedAbilityByPriority(EAbilityPriority.NORMAL)
+        executeSelectedAbilitiesForCreatures(standardPriorityCreatures)
+
+        battlefield.onEndTurn()
+    }
+
+    private fun getCreaturesWithSelectedAbilityByPriority(priority: EAbilityPriority): List<CreatureTactical> {
+        return battlefield.sides.values.flatMap { side ->
+            side.getCreaturesThatHaveSelectedAbilityWithPriority(priority)
         }.sortedByDescending { creature -> creature.getInitiative() }
     }
 
@@ -40,5 +55,26 @@ class Battle(
                 val selectedAbility: Ability = battlefield.sides[creature.owner]!!.getAbilitySelectedByCreature(creature)
             }
         }
+    }
+
+    /**
+     * Determines the victorious player, if any. Most common result is empty set - the battle continues. If single player, then one winner.
+     * Both players in the set mean draw.
+     */
+    fun getWinner(): Set<Player> {
+        val winners = mutableSetOf<Player>()
+        for (player in players) {
+            if (battlefield.sides[player]!!.getAllLivingCreatures().isEmpty()) {
+                winners.add(getOpponent(player))
+            }
+        }
+        return winners
+    }
+
+    /**
+     * Returns enemy of the given player.
+     */
+    fun getOpponent(player: Player): Player {
+        return players.filter { pl -> pl != player }.first()
     }
 }

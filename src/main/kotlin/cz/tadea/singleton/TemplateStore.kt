@@ -38,7 +38,7 @@ object TemplateStore {
         if (found != null) {
             return found
         } else {
-            throw IllegalArgumentException("Creature with given name doesn't exist among templates.")
+            throw IllegalArgumentException("Creature with given name doesn't exist among templates. Name: $name")
         }
     }
 }

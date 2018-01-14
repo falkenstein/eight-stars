@@ -14,9 +14,10 @@ import cz.tadea.tactical.creature.CreatureTactical
  * Represents the battlefield on which the individual tactical battle takes place.
  */
 class Battlefield(
-        val players: Set<Player>
+        val players: Set<Player>,
+        val size: Int = 6
 ) {
-    val sides: Map<Player, BattlefieldSide> = players.associateBy(keySelector = { player -> player }, valueTransform = { player -> BattlefieldSide(player) })
+    val sides: Map<Player, BattlefieldSide> = players.associateBy(keySelector = { player -> player }, valueTransform = { player -> BattlefieldSide(player, size) })
 
     /**
      * Return provided position.
