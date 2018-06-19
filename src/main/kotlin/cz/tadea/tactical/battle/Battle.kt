@@ -1,7 +1,7 @@
 package cz.tadea.tactical.battle
 
 import cz.tadea.ability.Ability
-import cz.tadea.ability.EAbilityPriority
+import cz.tadea.ability.EAbility
 import cz.tadea.creature.company.Company
 import cz.tadea.player.Player
 import cz.tadea.tactical.battlefield.Battlefield
@@ -25,34 +25,49 @@ class Battle(
      * Triggered after all actions are planned for all creatures.
      */
     fun evaluateTurn() {
-        // First set default actions for all creatures that have no action to perform.
-        battlefield.sides.values.forEach { side -> side.selectDefaultAbilities() }
-
-        // Now evaluate all abilities by their order. The ones with preemptive priority come first.
-        val preemptiveCreatures = getCreaturesWithSelectedAbilityByPriority(EAbilityPriority.PREEMPTIVE)
-        executeSelectedAbilitiesForCreatures(preemptiveCreatures)
-
-        // High priority now
-        val highPriorityCreatures = getCreaturesWithSelectedAbilityByPriority(EAbilityPriority.HIGH)
-        executeSelectedAbilitiesForCreatures(highPriorityCreatures)
-
-        // Standard priority
-        val standardPriorityCreatures = getCreaturesWithSelectedAbilityByPriority(EAbilityPriority.NORMAL)
-        executeSelectedAbilitiesForCreatures(standardPriorityCreatures)
+        // First compose the action queue.
+        val creaturesToActInOrder = composeActionOrder(battlefield)
+        // Now execute the actions in their proper order.
+        executeSelectedAbilitiesForCreatures(creaturesToActInOrder)
 
         battlefield.onEndTurn()
     }
 
-    private fun getCreaturesWithSelectedAbilityByPriority(priority: EAbilityPriority): List<CreatureTactical> {
-        return battlefield.sides.values.flatMap { side ->
-            side.getCreaturesThatHaveSelectedAbilityWithPriority(priority)
+    /**
+     * Properly interleaves the action orders from both teams.
+     */
+    protected fun composeActionOrder(battlefield: Battlefield): List<CreatureTactical> {
+        val playerWithInitiative = players.find { it.initiative } ?: throw IllegalStateException("No player has initiative.")
+        val fastOrder = battlefield.sides[playerWithInitiative]!!.selectedAbilities
+        val slowOrder = battlefield.sides[getOpponent(playerWithInitiative)]!!.selectedAbilities
+        val actionOrder = mutableListOf<CreatureTactical>()
+        actionOrder.add(fastOrder[0].first)
+        actionOrder.add(slowOrder[0].first)
+        if (slowOrder.size > 1) {
+            actionOrder.add(slowOrder[1].first) // Action order is first creature from the initiative side followed by two creatures from the other side.
         }
+        for (i in 1..maxOf(fastOrder.size, slowOrder.size)) {
+            if (fastOrder.size > i) {
+                actionOrder.add(fastOrder[i].first)
+            }
+            if (slowOrder.size > i + 1) {
+                actionOrder.add(slowOrder[i + i].first)
+            }
+        }
+        return actionOrder
     }
 
+    /**
+     * Handles execution of abilities in the selected order.
+     */
     private fun executeSelectedAbilitiesForCreatures(selectedCreatures: List<CreatureTactical>) {
         for (creature in selectedCreatures) {
             if (creature.alive) { // No point in doing anything if the creature got killed.
                 val selectedAbility: Ability = battlefield.sides[creature.owner]!!.getAbilitySelectedByCreature(creature)
+                        ?: creature.getAbility(EAbility.DEFEND) // Defend is fallback if the creature for some reason has no selected ability.
+                if (selectedAbility.canBeUsed()) {
+                    // Now do the execution itself.
+                }
             }
         }
     }
@@ -75,6 +90,6 @@ class Battle(
      * Returns enemy of the given player.
      */
     fun getOpponent(player: Player): Player {
-        return players.filter { pl -> pl != player }.first()
+        return players.first { pl -> pl != player }
     }
 }

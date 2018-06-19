@@ -7,5 +7,5 @@ class Player(
         val id: Int,
         val name: String
 ) {
-
+    var initiative: Boolean = false
 }

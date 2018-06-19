@@ -2,7 +2,6 @@ package cz.tadea.tactical.battlefield
 
 import cz.tadea.ability.Ability
 import cz.tadea.ability.EAbility
-import cz.tadea.ability.EAbilityPriority
 import cz.tadea.player.Player
 import cz.tadea.tactical.creature.CreatureTactical
 
@@ -15,7 +14,7 @@ class BattlefieldSide(
 ) {
     val frontRow: Map<Int, BattlefieldZone> = setupRow(0)
     val backRow: Map<Int, BattlefieldZone> = setupRow(1)
-    private val selectedAbilities: MutableMap<CreatureTactical, Ability?> = mutableMapOf()
+    val selectedAbilities: MutableList<Pair<CreatureTactical, Ability>> = mutableListOf()
 
     private fun setupRow(y: Int): Map<Int, BattlefieldZone> {
         val row: MutableMap<Int, BattlefieldZone> = mutableMapOf()
@@ -102,7 +101,7 @@ class BattlefieldSide(
 
     fun onEndTurn() {
         // Reset selected abilities.
-        selectedAbilities.keys.forEach { key -> selectedAbilities.put(key, null) }
+        selectedAbilities.clear()
         getAllZones().forEach { zone -> zone.onEndTurn() }
     }
 
@@ -110,8 +109,9 @@ class BattlefieldSide(
      * Selects given ability for the given creature. Checks if the creature exists on the field and if it already doesn't have an ability assigned.
      */
     fun selectAbility(creature: CreatureTactical, ability: Ability) {
-        if (selectedAbilities[creature] == null && getAllZones().any { zone -> zone.creature == creature }) {
-            selectedAbilities.put(creature, ability)
+        if (getAllZones().any { zone -> zone.creature == creature }) {
+            selectedAbilities.removeIf { it.first == creature } // First remove the ability that is already selected (if any)
+            selectedAbilities.add(Pair(creature, ability)) // Now add the new selection to the end of the list.
         }
     }
 
@@ -121,7 +121,7 @@ class BattlefieldSide(
     fun selectDefaultAbilities() {
         getAllZones().forEach { zone ->
             val creature = zone.creature
-            if (creature != null && selectedAbilities[creature] == null) {
+            if (creature != null && getAbilitySelectedByCreature(creature) == null) {
                 // Means we can assign default ability.
                 val attack = creature.getAbility(EAbility.ATTACK)
                 if (attack.canBeUsed()) {
@@ -133,12 +133,8 @@ class BattlefieldSide(
         }
     }
 
-    fun getCreaturesThatHaveSelectedAbilityWithPriority(priority: EAbilityPriority): List<CreatureTactical> {
-        return selectedAbilities.keys.filter { creature -> selectedAbilities[creature]!!.associatedEnum.priority == priority }
-    }
-
-    fun getAbilitySelectedByCreature(creature: CreatureTactical): Ability {
-        return selectedAbilities[creature] ?: throw IllegalArgumentException("There is no ability for the given creature.")
+    fun getAbilitySelectedByCreature(creature: CreatureTactical): Ability? {
+        return selectedAbilities.find { it.first == creature }?.second
     }
 
     /**
