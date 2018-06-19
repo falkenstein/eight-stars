@@ -1,6 +1,7 @@
 package cz.tadea.ability.innate
 
 import cz.tadea.ability.Ability
+import cz.tadea.ability.AbilityWithTarget
 import cz.tadea.ability.EAbility
 import cz.tadea.creature.enums.ECreatureFlag
 import cz.tadea.exception.CannotUseAbilityException
@@ -18,7 +19,7 @@ import cz.tadea.tactical.battlefield.BattlefieldZone
 class Attack(
         user: CreatureTactical,
         battlefield: Battlefield
-) : Ability(user, battlefield) {
+) : AbilityWithTarget(user, battlefield) {
     override val associatedEnum = EAbility.ATTACK
 
     override fun canBeUsed(): Boolean {
@@ -28,32 +29,25 @@ class Attack(
         } else if (!currentZone.isFront() && user.weapons.none { weapon -> weapon.style == EWeaponStyle.RANGED }) {
             return false
         } else {
-            val validTargets = getValidTargets()
-            return !validTargets.isEmpty()
+            val validTarget = getValidTarget()
+            return validTarget != null
         }
     }
 
-    override fun getValidTargets(): List<BattlefieldZone> {
-        val validTargets = mutableListOf<BattlefieldZone>()
+    override fun getValidTarget(): BattlefieldZone? {
         val currentZone = battlefield.getZoneOfCreature(user)!!
         if (currentZone.isFront()) {
             // Now check legal weapon.
             if (user.weapons.any { weapon -> weapon.style != EWeaponStyle.RANGED }) {
-                val targetZone = getStandardMeleeTargeting(currentZone)
-                if (targetZone != null) {
-                    validTargets.add(targetZone)
-                }
+                return getStandardMeleeTargeting(currentZone)
             }
         } else {
             // Now check legal weapon.
             if (user.weapons.any { weapon -> weapon.style == EWeaponStyle.RANGED }) {
-                val targetZone = getStandardRangedTargeting(currentZone)
-                if (targetZone != null) {
-                    validTargets.add(targetZone)
-                }
+                return getStandardRangedTargeting(currentZone)
             }
         }
-        return validTargets
+        return null
     }
 
     /**
@@ -121,8 +115,8 @@ class Attack(
         return zone.creature != null
     }
 
-    override fun execute(target: BattlefieldZone?) {
-        val targetCreature = target!!.creature ?: throw IllegalArgumentException("Attack requires a creature to stand on target zone.")
+    override fun execute() {
+        val targetCreature = getValidTarget()?.creature ?: throw IllegalArgumentException("Attack requires a creature to stand on target zone.")
         val allDamage: MutableList<Triple<EDamageType, Int, String>> = mutableListOf()
 
         // Creature's weapon

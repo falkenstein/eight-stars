@@ -38,8 +38,8 @@ class DefendTest : AbstractTest() {
         val hpBefore1 = creatureA1.hp
         val hpBefore2 = creatureA2.hp
         // Both Bs attack once - we make sure some damage was dealt.
-        battlefield.useAbility(creatureB1, EAbility.ATTACK, creatureA1)
-        battlefield.useAbility(creatureB2, EAbility.ATTACK, creatureA2)
+        battlefield.useAbility(creatureB1, EAbility.ATTACK)
+        battlefield.useAbility(creatureB2, EAbility.ATTACK)
         assertTrue(hpBefore1 > creatureA1.hp)
         assertTrue(hpBefore2 > creatureA2.hp)
         // Now also check defender took less damage

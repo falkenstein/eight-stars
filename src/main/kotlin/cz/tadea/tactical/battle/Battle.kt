@@ -19,17 +19,22 @@ class Battle(
 
     init {
         players.forEach { player -> battlefield.initializeCompany(companies[player]!!) }
+        players.first().initiative = true // Set the initiative to the first player.
     }
 
     /**
      * Triggered after all actions are planned for all creatures.
      */
     fun evaluateTurn() {
+        // AI case
+        composeActionOrderForAIPlayers()
         // First compose the action queue.
         val creaturesToActInOrder = composeActionOrder(battlefield)
         // Now execute the actions in their proper order.
         executeSelectedAbilitiesForCreatures(creaturesToActInOrder)
-
+        // Switch initiative.
+        switchInitiative()
+        // End turn - auto-evaluate all behavior.
         battlefield.onEndTurn()
     }
 
@@ -46,12 +51,12 @@ class Battle(
         if (slowOrder.size > 1) {
             actionOrder.add(slowOrder[1].first) // Action order is first creature from the initiative side followed by two creatures from the other side.
         }
-        for (i in 1..maxOf(fastOrder.size, slowOrder.size)) {
-            if (fastOrder.size > i) {
+        for (i in 1 until maxOf(fastOrder.size, slowOrder.size)) {
+            if (fastOrder.size >= i + 1) {
                 actionOrder.add(fastOrder[i].first)
             }
-            if (slowOrder.size > i + 1) {
-                actionOrder.add(slowOrder[i + i].first)
+            if (slowOrder.size >= i + 2) {
+                actionOrder.add(slowOrder[i + 1].first)
             }
         }
         return actionOrder
@@ -65,11 +70,21 @@ class Battle(
             if (creature.alive) { // No point in doing anything if the creature got killed.
                 val selectedAbility: Ability = battlefield.sides[creature.owner]!!.getAbilitySelectedByCreature(creature)
                         ?: creature.getAbility(EAbility.DEFEND) // Defend is fallback if the creature for some reason has no selected ability.
+                val targetZone = if (selectedAbility.associatedEnum == EAbility.MOVE) battlefield.sides[creature.owner]!!.getTargetOfMoveForCreature(creature) else null
                 if (selectedAbility.canBeUsed()) {
                     // Now do the execution itself.
+                    battlefield.useAbility(
+                            creature = creature, abilityEnum = selectedAbility.associatedEnum, targetZone = targetZone
+                    )
                 }
             }
         }
+    }
+
+    private fun switchInitiative() {
+        val playerWithInitiative = players.find { it.initiative == true } ?: throw IllegalStateException("No player has initiative")
+        playerWithInitiative.initiative = false
+        getOpponent(playerWithInitiative).initiative = true
     }
 
     /**
@@ -91,5 +106,14 @@ class Battle(
      */
     fun getOpponent(player: Player): Player {
         return players.first { pl -> pl != player }
+    }
+
+    /**
+     * AI behavior. ATM only selects default abilities.
+     */
+    fun composeActionOrderForAIPlayers() {
+        for (player in players.filter { it.ai != null }) {
+            battlefield.sides[player]?.selectDefaultAbilities()
+        }
     }
 }

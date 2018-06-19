@@ -1,6 +1,7 @@
 package cz.tadea.ability.innate
 
 import cz.tadea.ability.Ability
+import cz.tadea.ability.AbilityNoTarget
 import cz.tadea.ability.EAbility
 import cz.tadea.creature.enums.ECreatureFlag
 import cz.tadea.tactical.creature.CreatureTactical
@@ -13,7 +14,7 @@ import cz.tadea.tactical.battlefield.BattlefieldZone
 class Defend(
         user: CreatureTactical,
         battlefield: Battlefield
-) : Ability(user, battlefield) {
+) : AbilityNoTarget(user, battlefield) {
 
     companion object {
         const val DAMAGE_REDUCTION: Int = 20
@@ -25,11 +26,7 @@ class Defend(
         return true
     }
 
-    override fun getValidTargets(): List<BattlefieldZone> {
-        return emptyList()
-    }
-
-    override fun execute(target: BattlefieldZone?) {
+    override fun execute() {
         user.addFlag(ECreatureFlag.DEFEND, duration = 1)
     }
 }

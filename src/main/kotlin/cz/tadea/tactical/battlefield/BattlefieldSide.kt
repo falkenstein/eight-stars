@@ -14,7 +14,7 @@ class BattlefieldSide(
 ) {
     val frontRow: Map<Int, BattlefieldZone> = setupRow(0)
     val backRow: Map<Int, BattlefieldZone> = setupRow(1)
-    val selectedAbilities: MutableList<Pair<CreatureTactical, Ability>> = mutableListOf()
+    val selectedAbilities: MutableList<Triple<CreatureTactical, Ability, BattlefieldZone?>> = mutableListOf()
 
     private fun setupRow(y: Int): Map<Int, BattlefieldZone> {
         val row: MutableMap<Int, BattlefieldZone> = mutableMapOf()
@@ -107,11 +107,12 @@ class BattlefieldSide(
 
     /**
      * Selects given ability for the given creature. Checks if the creature exists on the field and if it already doesn't have an ability assigned.
+     * Only ability that requires target is Move.
      */
-    fun selectAbility(creature: CreatureTactical, ability: Ability) {
+    fun selectAbility(creature: CreatureTactical, ability: Ability, target: BattlefieldZone? = null) {
         if (getAllZones().any { zone -> zone.creature == creature }) {
             selectedAbilities.removeIf { it.first == creature } // First remove the ability that is already selected (if any)
-            selectedAbilities.add(Pair(creature, ability)) // Now add the new selection to the end of the list.
+            selectedAbilities.add(Triple(creature, ability, target)) // Now add the new selection to the end of the list.
         }
     }
 
@@ -135,6 +136,10 @@ class BattlefieldSide(
 
     fun getAbilitySelectedByCreature(creature: CreatureTactical): Ability? {
         return selectedAbilities.find { it.first == creature }?.second
+    }
+
+    fun getTargetOfMoveForCreature(creature: CreatureTactical): BattlefieldZone? {
+        return selectedAbilities.find { it.first == creature }?.third
     }
 
     /**

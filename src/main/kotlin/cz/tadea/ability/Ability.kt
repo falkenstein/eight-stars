@@ -23,16 +23,6 @@ abstract class Ability(
      */
     abstract fun canBeUsed(): Boolean
 
-    /**
-     * Returns possible valid targets from which the player can select.
-     */
-    abstract fun getValidTargets(): List<BattlefieldZone>
-
-    /**
-     * performs the ability.
-     */
-    abstract fun execute(target: BattlefieldZone?)
-
     protected fun getEnemyBattlefieldSide(): BattlefieldSide {
         return battlefield.sides[battlefield.getEnemyPlayer(user.owner)]!!
     }

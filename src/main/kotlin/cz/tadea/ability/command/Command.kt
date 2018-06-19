@@ -1,6 +1,7 @@
 package cz.tadea.ability.command
 
 import cz.tadea.ability.Ability
+import cz.tadea.ability.AbilityNoTarget
 import cz.tadea.tactical.battlefield.Battlefield
 import cz.tadea.tactical.battlefield.BattlefieldZone
 import cz.tadea.tactical.creature.CreatureTactical
@@ -11,13 +12,6 @@ import cz.tadea.tactical.creature.CreatureTactical
 abstract class Command(
         user: CreatureTactical,
         battlefield: Battlefield
-) : Ability(user, battlefield) {
+) : AbilityNoTarget(user, battlefield) {
 
-    override fun getValidTargets(): List<BattlefieldZone> {
-        return super.getOwnBattlefieldSide().getAllZones().filter { zone -> zone.creature != null }
-    }
-
-    override fun canBeUsed(): Boolean {
-        return true
-    }
 }

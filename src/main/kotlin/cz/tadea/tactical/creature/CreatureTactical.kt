@@ -61,14 +61,16 @@ class CreatureTactical(
      */
     fun onEndTurn() {
         // Flags - remove all flags that are outdated.
+        val flagsToRemove = mutableListOf<CreatureFlag>()
         for (flag in flags) {
             if (flag.temporary) {
                 flag.duration--
                 if (flag.duration <= 0) {
-                    flags.remove(flag)
+                    flagsToRemove.add(flag)
                 }
             }
         }
+        flags.removeAll(flagsToRemove)
     }
 
     fun hasFlag(flag: ECreatureFlag): Boolean {

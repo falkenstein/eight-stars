@@ -1,6 +1,10 @@
 package cz.tadea.tactical.battlefield
 
+import cz.tadea.ability.AbilityNoTarget
+import cz.tadea.ability.AbilityWithTarget
 import cz.tadea.ability.EAbility
+import cz.tadea.ability.innate.Defend
+import cz.tadea.ability.innate.Move
 import cz.tadea.creature.company.Company
 import cz.tadea.creature.enums.ECreatureFlag
 import cz.tadea.creature.enums.EDamageResistanceType
@@ -133,24 +137,27 @@ class Battlefield(
         }
     }
 
-    fun useAbility(creature: CreatureTactical, abilityEnum: EAbility, targetCreature: CreatureTactical) {
-        useAbility(creature, abilityEnum, getZoneOfCreature(targetCreature))
-    }
-
-    fun useAbility(creature: CreatureTactical, abilityEnum: EAbility, targetZone: BattlefieldZone?) {
+    /**
+     * Target is only filled in for Move.
+     */
+    fun useAbility(creature: CreatureTactical, abilityEnum: EAbility, targetZone: BattlefieldZone? = null) {
         val ability = creature.getAbility(abilityEnum)
         if (ability.canBeUsed()) {
-            if (abilityEnum.requiresTarget) {
-                if (ability.getValidTargets().contains(targetZone)) {
-                    ability.execute(targetZone)
-                } else {
-                    throw CannotUseAbilityException("Provided target $targetZone for ability $abilityEnum is not valid.")
+            if (ability is AbilityWithTarget) {
+                ability.execute()
+            } else if (ability is AbilityNoTarget) {
+                ability.execute()
+            } else if (ability is Move) { // Move
+                if (targetZone == null) {
+                    throw IllegalStateException("Move requires target.")
                 }
+                ability.execute(targetZone)
             } else {
-                ability.execute(null)
+                throw IllegalStateException("Unknown type of ability.")
             }
         } else {
-            throw CannotUseAbilityException("Ability $abilityEnum can't be used now.")
+            val defend = creature.getAbility(EAbility.DEFEND) as Defend
+            defend.execute() // Default defend in the case the selected ability isn't useable in the moment.
         }
     }
 

@@ -47,11 +47,11 @@ class AttackTest : AbstractTest() {
         battlefield.initializeCreature(creatureB, 1, 0)
         battlefield.initializeCreature(creatureC, 0, 0)
         battlefield.initializeCreature(creatureD, 2, 0)
-        assert(creatureA.getAbility(EAbility.ATTACK).getValidTargets().contains(battlefield.getZoneOfCreature(creatureB)))
+        assertTrue(creatureA.getAbility(EAbility.ATTACK).canBeUsed())
         battlefield.moveCreature(creatureB, 1, 1)
-        assert(creatureA.getAbility(EAbility.ATTACK).getValidTargets().contains(battlefield.getZoneOfCreature(creatureD)))
+        assertTrue(creatureA.getAbility(EAbility.ATTACK).canBeUsed())
         battlefield.moveCreature(creatureD, 3, 0)
-        assert(creatureA.getAbility(EAbility.ATTACK).getValidTargets().contains(battlefield.getZoneOfCreature(creatureC)))
+        assertTrue(creatureA.getAbility(EAbility.ATTACK).canBeUsed())
     }
 
     @Test
@@ -78,11 +78,11 @@ class AttackTest : AbstractTest() {
         battlefield.initializeCreature(creatureA, 1, 0)
         battlefield.initializeCreature(creatureB, 1, 0)
         val hpBefore = creatureB.hp
-        battlefield.useAbility(creatureA, EAbility.ATTACK, creatureB)
+        battlefield.useAbility(creatureA, EAbility.ATTACK)
         assertTrue(hpBefore > creatureB.hp)
         for (i in 0..30) { // Should be more than enough to kill the target
             if (creatureB.alive) {
-                battlefield.useAbility(creatureA, EAbility.ATTACK, creatureB)
+                battlefield.useAbility(creatureA, EAbility.ATTACK)
             }
         }
         assertFalse(creatureB.alive)

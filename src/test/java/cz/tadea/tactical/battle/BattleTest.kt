@@ -19,33 +19,33 @@ class BattleTest : AbstractTest() {
         val companyA = Company(
                 playerA,
                 listOf(
-                        TemplateStore.getCreature("pikeman"),
                         TemplateStore.getCreature("longswordman"),
                         TemplateStore.getCreature("longswordman"),
-                        TemplateStore.getCreature("pikeman")
+                        TemplateStore.getCreature("longswordman"),
+                        TemplateStore.getCreature("longswordman")
                 ),
-                listOf(
-                        TemplateStore.getCreature("crossbowman"),
-                        TemplateStore.getCreature("crossbowman"),
-                        TemplateStore.getCreature("crossbowman")
-                ),
+                listOf(),
                 TemplateStore.getCreature("captain")
         )
         val companyB = Company(
                 playerB,
                 listOf(
                         TemplateStore.getCreature("pikeman"),
-                        TemplateStore.getCreature("longswordman"),
-                        TemplateStore.getCreature("longswordman"),
+                        TemplateStore.getCreature("pikeman"),
+                        TemplateStore.getCreature("pikeman"),
                         TemplateStore.getCreature("pikeman")
                 ),
-                listOf(
-                        TemplateStore.getCreature("crossbowman"),
-                        TemplateStore.getCreature("crossbowman"),
-                        TemplateStore.getCreature("crossbowman")
-                ),
+                listOf(),
                 TemplateStore.getCreature("captain")
         )
-        val battle: Battle = Battle(players, mapOf(Pair(playerA, companyA), Pair(playerB, companyB)))
+        val battle = Battle(players, mapOf(Pair(playerA, companyA), Pair(playerB, companyB)))
+        for (i in 0..30) { // The battle must end in reasonable amount of turns.
+            battle.evaluateTurn()
+            val winners = battle.getWinner()
+            if (winners.isNotEmpty()) {
+                return
+            }
+        }
+        fail()
     }
 }
