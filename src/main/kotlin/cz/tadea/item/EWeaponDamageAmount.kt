@@ -1,4 +1,4 @@
-package cz.tadea.item
+package main.kotlin.cz.tadea.item
 
 /**
  * Defines damage range of the weapon. This class exists to make the weapons table clearer. Also avoids duplicity for damage numbers.

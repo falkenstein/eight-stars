@@ -1,4 +1,4 @@
-package cz.tadea.item
+package main.kotlin.cz.tadea.item
 
 import main.kotlin.cz.tadea.creature.enums.EArmorType
 import main.kotlin.cz.tadea.creature.enums.EUnitType

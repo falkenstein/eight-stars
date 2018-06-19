@@ -1,6 +1,6 @@
 package main.kotlin.cz.tadea.creature.company
 
-import cz.tadea.player.Player
+import main.kotlin.cz.tadea.player.Player
 import main.kotlin.cz.tadea.singleton.TemplateStore
 import main.kotlin.cz.tadea.template.CreatureTemplate
 

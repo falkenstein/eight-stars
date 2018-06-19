@@ -1,4 +1,4 @@
-package cz.tadea.item
+package main.kotlin.cz.tadea.item
 
 /**
  * Defines how the weapon is wielded.

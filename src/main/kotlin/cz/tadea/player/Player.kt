@@ -1,4 +1,4 @@
-package cz.tadea.player
+package main.kotlin.cz.tadea.player
 
 import main.kotlin.cz.tadea.ai.AI
 

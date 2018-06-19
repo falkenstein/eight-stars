@@ -1,6 +1,6 @@
-package cz.tadea.tactical
+package main.kotlin.cz.tadea.tactical
 
-import cz.tadea.AbstractTest
+import main.kotlin.cz.tadea.AbstractTest
 import main.kotlin.cz.tadea.singleton.TemplateStore
 import main.kotlin.cz.tadea.tactical.creature.CreatureTactical
 import org.junit.Test

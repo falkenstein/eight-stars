@@ -1,6 +1,6 @@
-package cz.tadea
+package main.kotlin.cz.tadea
 
-import cz.tadea.player.Player
+import main.kotlin.cz.tadea.player.Player
 import main.kotlin.cz.tadea.ai.AI
 
 /**

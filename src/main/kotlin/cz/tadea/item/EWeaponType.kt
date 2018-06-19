@@ -1,5 +1,8 @@
-package cz.tadea.item
+package main.kotlin.cz.tadea.item
 
+import main.kotlin.cz.tadea.item.EWeaponCategory
+import main.kotlin.cz.tadea.item.EWeaponDamageAmount
+import main.kotlin.cz.tadea.item.EWeaponStyle
 import main.kotlin.cz.tadea.tactical.EDamageType
 
 enum class EWeaponType(

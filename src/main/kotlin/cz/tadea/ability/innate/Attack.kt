@@ -1,12 +1,11 @@
 package main.kotlin.cz.tadea.ability.innate
 
 import main.kotlin.cz.tadea.ability.AbilityWithTarget
-import cz.tadea.ability.EAbility
-import cz.tadea.ability.innate.Defend
+import main.kotlin.cz.tadea.ability.EAbility
 import main.kotlin.cz.tadea.creature.enums.ECreatureFlag
-import cz.tadea.item.EWeaponDamageAmount
-import cz.tadea.item.EWeaponStyle
-import cz.tadea.item.EWeaponType
+import main.kotlin.cz.tadea.item.EWeaponDamageAmount
+import main.kotlin.cz.tadea.item.EWeaponStyle
+import main.kotlin.cz.tadea.item.EWeaponType
 import main.kotlin.cz.tadea.tactical.EDamageType
 import main.kotlin.cz.tadea.tactical.creature.CreatureTactical
 import main.kotlin.cz.tadea.tactical.battlefield.Battlefield

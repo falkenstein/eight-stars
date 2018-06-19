@@ -2,14 +2,14 @@ package main.kotlin.cz.tadea.tactical.battlefield
 
 import main.kotlin.cz.tadea.ability.AbilityNoTarget
 import main.kotlin.cz.tadea.ability.AbilityWithTarget
-import cz.tadea.ability.EAbility
-import cz.tadea.ability.innate.Defend
-import cz.tadea.ability.innate.Move
+import main.kotlin.cz.tadea.ability.EAbility
+import main.kotlin.cz.tadea.ability.innate.Defend
+import main.kotlin.cz.tadea.ability.innate.Move
 import main.kotlin.cz.tadea.creature.company.Company
 import main.kotlin.cz.tadea.creature.enums.ECreatureFlag
 import main.kotlin.cz.tadea.creature.enums.EDamageResistanceType
 import main.kotlin.cz.tadea.creature.enums.EUnitType
-import cz.tadea.player.Player
+import main.kotlin.cz.tadea.player.Player
 import main.kotlin.cz.tadea.tactical.EDamageType
 import main.kotlin.cz.tadea.tactical.creature.CreatureTactical
 

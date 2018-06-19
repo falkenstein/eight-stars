@@ -1,6 +1,6 @@
-package cz.tadea.tactical.battlefield
+package main.kotlin.cz.tadea.tactical.battlefield
 
-import cz.tadea.AbstractTest
+import main.kotlin.cz.tadea.AbstractTest
 import main.kotlin.cz.tadea.singleton.TemplateStore
 import main.kotlin.cz.tadea.tactical.battlefield.Battlefield
 import main.kotlin.cz.tadea.tactical.creature.CreatureTactical

@@ -1,7 +1,7 @@
-package cz.tadea.ability.innate
+package main.kotlin.cz.tadea.ability.innate
 
-import cz.tadea.AbstractTest
-import cz.tadea.ability.EAbility
+import main.kotlin.cz.tadea.AbstractTest
+import main.kotlin.cz.tadea.ability.EAbility
 import main.kotlin.cz.tadea.creature.enums.ECreatureFlag
 import main.kotlin.cz.tadea.singleton.TemplateStore
 import main.kotlin.cz.tadea.tactical.battlefield.Battlefield

@@ -1,7 +1,7 @@
 package main.kotlin.cz.tadea.template
 
-import cz.tadea.ability.EAbility
-import cz.tadea.item.EWeaponType
+import main.kotlin.cz.tadea.ability.EAbility
+import main.kotlin.cz.tadea.item.EWeaponType
 import main.kotlin.cz.tadea.creature.enums.*
 import main.kotlin.cz.tadea.tactical.EDamageType
 

@@ -1,6 +1,5 @@
 package main.kotlin.cz.tadea.ability
 
-import cz.tadea.ability.EAbility
 import main.kotlin.cz.tadea.tactical.creature.CreatureTactical
 import main.kotlin.cz.tadea.tactical.battlefield.Battlefield
 import main.kotlin.cz.tadea.tactical.battlefield.BattlefieldSide

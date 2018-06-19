@@ -1,7 +1,7 @@
-package cz.tadea.ability.innate
+package main.kotlin.cz.tadea.ability.innate
 
 import main.kotlin.cz.tadea.ability.Ability
-import cz.tadea.ability.EAbility
+import main.kotlin.cz.tadea.ability.EAbility
 import main.kotlin.cz.tadea.tactical.creature.CreatureTactical
 import main.kotlin.cz.tadea.tactical.battlefield.Battlefield
 import main.kotlin.cz.tadea.tactical.battlefield.BattlefieldZone

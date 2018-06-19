@@ -1,13 +1,13 @@
 package main.kotlin.cz.tadea.tactical.creature
 
 import main.kotlin.cz.tadea.ability.Ability
-import cz.tadea.ability.EAbility
+import main.kotlin.cz.tadea.ability.EAbility
 import main.kotlin.cz.tadea.creature.enums.EArmorType
 import main.kotlin.cz.tadea.creature.enums.ECreatureFlag
 import main.kotlin.cz.tadea.creature.enums.EDamageResistanceType
 import main.kotlin.cz.tadea.creature.enums.EUnitType
-import cz.tadea.item.EWeaponType
-import cz.tadea.player.Player
+import main.kotlin.cz.tadea.item.EWeaponType
+import main.kotlin.cz.tadea.player.Player
 import main.kotlin.cz.tadea.tactical.EDamageType
 import main.kotlin.cz.tadea.tactical.battlefield.Battlefield
 import main.kotlin.cz.tadea.template.CreatureTemplate
@@ -54,6 +54,7 @@ class CreatureTactical(
     fun onInsertedToBattlefield(battlefield: Battlefield) {
         abilities.add(EAbility.ATTACK.getInstance(this, battlefield))
         abilities.add(EAbility.DEFEND.getInstance(this, battlefield))
+        abilities.add(EAbility.MOVE.getInstance(this, battlefield))
     }
 
     /**

@@ -1,4 +1,4 @@
-package cz.tadea.exception
+package main.kotlin.cz.tadea.exception
 
 /**
  * Exception that is thrown when an ability can't be used.
