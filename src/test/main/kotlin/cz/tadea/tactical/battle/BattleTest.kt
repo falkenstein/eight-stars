@@ -45,6 +45,7 @@ class BattleTest : AbstractTest() {
             if (winners.isNotEmpty()) {
                 return
             }
+//            println(battle.getDescription())
         }
         fail()
     }

@@ -148,4 +148,13 @@ class BattlefieldSide(
     fun getAllLivingCreatures(): List<CreatureTactical> {
         return getAllZones().filter { zone -> zone.creature != null && zone.creature!!.alive }.map { zone -> zone.creature!! }
     }
+
+    /**
+     * Lists current creatures and their HP.
+     */
+    fun getDescription(): String {
+        return getAllLivingCreatures()
+                .map { "${it.name} (${it.hp})" }
+                .joinToString(separator = ", ")
+    }
 }

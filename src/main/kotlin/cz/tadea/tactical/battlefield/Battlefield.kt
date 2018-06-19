@@ -201,4 +201,10 @@ class Battlefield(
     fun onEndTurn() {
         sides.values.forEach { side -> side.onEndTurn() }
     }
+
+    fun getDescription(): String {
+        return players
+                .map { "${it.name}:${sides[it]!!.getDescription()}" }
+                .joinToString(separator = "\n")
+    }
 }

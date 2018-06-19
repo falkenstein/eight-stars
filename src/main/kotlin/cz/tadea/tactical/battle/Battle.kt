@@ -6,6 +6,7 @@ import main.kotlin.cz.tadea.creature.company.Company
 import main.kotlin.cz.tadea.player.Player
 import main.kotlin.cz.tadea.tactical.battlefield.Battlefield
 import main.kotlin.cz.tadea.tactical.creature.CreatureTactical
+import kotlin.math.round
 
 /**
  * Represents flow of the battle and processes player input.
@@ -36,6 +37,7 @@ class Battle(
         switchInitiative()
         // End turn - auto-evaluate all behavior.
         battlefield.onEndTurn()
+        turn++
     }
 
     /**
@@ -115,5 +117,9 @@ class Battle(
         for (player in players.filter { it.ai != null }) {
             battlefield.sides[player]?.selectDefaultAbilities()
         }
+    }
+
+    fun getDescription(): String {
+        return "Turn: $turn\n${battlefield.getDescription()}"
     }
 }
