@@ -1,18 +1,17 @@
-package cz.tadea.tactical.battlefield
+package main.kotlin.cz.tadea.tactical.battlefield
 
-import cz.tadea.ability.AbilityNoTarget
-import cz.tadea.ability.AbilityWithTarget
+import main.kotlin.cz.tadea.ability.AbilityNoTarget
+import main.kotlin.cz.tadea.ability.AbilityWithTarget
 import cz.tadea.ability.EAbility
 import cz.tadea.ability.innate.Defend
 import cz.tadea.ability.innate.Move
-import cz.tadea.creature.company.Company
-import cz.tadea.creature.enums.ECreatureFlag
-import cz.tadea.creature.enums.EDamageResistanceType
-import cz.tadea.creature.enums.EUnitType
-import cz.tadea.exception.CannotUseAbilityException
+import main.kotlin.cz.tadea.creature.company.Company
+import main.kotlin.cz.tadea.creature.enums.ECreatureFlag
+import main.kotlin.cz.tadea.creature.enums.EDamageResistanceType
+import main.kotlin.cz.tadea.creature.enums.EUnitType
 import cz.tadea.player.Player
-import cz.tadea.tactical.EDamageType
-import cz.tadea.tactical.creature.CreatureTactical
+import main.kotlin.cz.tadea.tactical.EDamageType
+import main.kotlin.cz.tadea.tactical.creature.CreatureTactical
 
 /**
  * Represents the battlefield on which the individual tactical battle takes place.

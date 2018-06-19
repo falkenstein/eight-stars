@@ -1,8 +1,9 @@
 package cz.tadea.tactical.battle
 
 import cz.tadea.AbstractTest
-import cz.tadea.creature.company.Company
-import cz.tadea.singleton.TemplateStore
+import main.kotlin.cz.tadea.creature.company.Company
+import main.kotlin.cz.tadea.singleton.TemplateStore
+import main.kotlin.cz.tadea.tactical.battle.Battle
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test

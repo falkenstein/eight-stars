@@ -1,8 +1,9 @@
 package cz.tadea.tactical.battlefield
 
 import cz.tadea.AbstractTest
-import cz.tadea.singleton.TemplateStore
-import cz.tadea.tactical.creature.CreatureTactical
+import main.kotlin.cz.tadea.singleton.TemplateStore
+import main.kotlin.cz.tadea.tactical.battlefield.Battlefield
+import main.kotlin.cz.tadea.tactical.creature.CreatureTactical
 import org.junit.Assert.fail
 import org.junit.Test
 

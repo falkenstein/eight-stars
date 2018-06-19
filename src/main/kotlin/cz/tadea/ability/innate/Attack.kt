@@ -1,17 +1,16 @@
-package cz.tadea.ability.innate
+package main.kotlin.cz.tadea.ability.innate
 
-import cz.tadea.ability.Ability
-import cz.tadea.ability.AbilityWithTarget
+import main.kotlin.cz.tadea.ability.AbilityWithTarget
 import cz.tadea.ability.EAbility
-import cz.tadea.creature.enums.ECreatureFlag
-import cz.tadea.exception.CannotUseAbilityException
+import cz.tadea.ability.innate.Defend
+import main.kotlin.cz.tadea.creature.enums.ECreatureFlag
 import cz.tadea.item.EWeaponDamageAmount
 import cz.tadea.item.EWeaponStyle
 import cz.tadea.item.EWeaponType
-import cz.tadea.tactical.EDamageType
-import cz.tadea.tactical.creature.CreatureTactical
-import cz.tadea.tactical.battlefield.Battlefield
-import cz.tadea.tactical.battlefield.BattlefieldZone
+import main.kotlin.cz.tadea.tactical.EDamageType
+import main.kotlin.cz.tadea.tactical.creature.CreatureTactical
+import main.kotlin.cz.tadea.tactical.battlefield.Battlefield
+import main.kotlin.cz.tadea.tactical.battlefield.BattlefieldZone
 
 /**
  * The default attack with equipped weapon.

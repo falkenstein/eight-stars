@@ -1,16 +1,16 @@
-package cz.tadea.tactical.creature
+package main.kotlin.cz.tadea.tactical.creature
 
-import cz.tadea.ability.Ability
+import main.kotlin.cz.tadea.ability.Ability
 import cz.tadea.ability.EAbility
-import cz.tadea.creature.enums.EArmorType
-import cz.tadea.creature.enums.ECreatureFlag
-import cz.tadea.creature.enums.EDamageResistanceType
-import cz.tadea.creature.enums.EUnitType
+import main.kotlin.cz.tadea.creature.enums.EArmorType
+import main.kotlin.cz.tadea.creature.enums.ECreatureFlag
+import main.kotlin.cz.tadea.creature.enums.EDamageResistanceType
+import main.kotlin.cz.tadea.creature.enums.EUnitType
 import cz.tadea.item.EWeaponType
 import cz.tadea.player.Player
-import cz.tadea.tactical.EDamageType
-import cz.tadea.tactical.battlefield.Battlefield
-import cz.tadea.template.CreatureTemplate
+import main.kotlin.cz.tadea.tactical.EDamageType
+import main.kotlin.cz.tadea.tactical.battlefield.Battlefield
+import main.kotlin.cz.tadea.template.CreatureTemplate
 
 /**
  * Represents a creature on the battlefield.

@@ -1,10 +1,11 @@
 package cz.tadea.ability
 
-import cz.tadea.ability.innate.Attack
+import main.kotlin.cz.tadea.ability.innate.Attack
 import cz.tadea.ability.innate.Defend
 import cz.tadea.ability.innate.Move
-import cz.tadea.tactical.battlefield.Battlefield
-import cz.tadea.tactical.creature.CreatureTactical
+import main.kotlin.cz.tadea.tactical.battlefield.Battlefield
+import main.kotlin.cz.tadea.tactical.creature.CreatureTactical
+import main.kotlin.cz.tadea.ability.Ability
 
 /**
  * Enum that lists all abilities and permits getting new ability instances.

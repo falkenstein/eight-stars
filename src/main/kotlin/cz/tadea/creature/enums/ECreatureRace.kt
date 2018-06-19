@@ -1,4 +1,4 @@
-package cz.tadea.creature.enums
+package main.kotlin.cz.tadea.creature.enums
 
 /**
  * Possible creature races. Each falls into one particular type.

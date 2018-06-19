@@ -2,9 +2,9 @@ package cz.tadea.ability.innate
 
 import cz.tadea.AbstractTest
 import cz.tadea.ability.EAbility
-import cz.tadea.singleton.TemplateStore
-import cz.tadea.tactical.battlefield.Battlefield
-import cz.tadea.tactical.creature.CreatureTactical
+import main.kotlin.cz.tadea.singleton.TemplateStore
+import main.kotlin.cz.tadea.tactical.battlefield.Battlefield
+import main.kotlin.cz.tadea.tactical.creature.CreatureTactical
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Before

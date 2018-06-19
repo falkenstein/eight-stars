@@ -1,8 +1,8 @@
 package cz.tadea.tactical
 
 import cz.tadea.AbstractTest
-import cz.tadea.singleton.TemplateStore
-import cz.tadea.tactical.creature.CreatureTactical
+import main.kotlin.cz.tadea.singleton.TemplateStore
+import main.kotlin.cz.tadea.tactical.creature.CreatureTactical
 import org.junit.Test
 
 class CreatureTacticalTest : AbstractTest() {

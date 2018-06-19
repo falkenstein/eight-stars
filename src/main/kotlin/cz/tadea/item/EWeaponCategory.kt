@@ -1,7 +1,7 @@
 package cz.tadea.item
 
-import cz.tadea.creature.enums.EArmorType
-import cz.tadea.creature.enums.EUnitType
+import main.kotlin.cz.tadea.creature.enums.EArmorType
+import main.kotlin.cz.tadea.creature.enums.EUnitType
 
 /**
  * Every weapon category is effective only up to certain armor weight. Best in this regard are blunt weapons and crossbows, as they never

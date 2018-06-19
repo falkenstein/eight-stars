@@ -1,9 +1,9 @@
-package cz.tadea.singleton
+package main.kotlin.cz.tadea.singleton
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.KotlinModule
 import com.fasterxml.jackson.module.kotlin.readValue
-import cz.tadea.template.CreatureTemplate
+import main.kotlin.cz.tadea.template.CreatureTemplate
 import org.apache.commons.io.IOUtils
 import java.io.IOException
 

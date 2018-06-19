@@ -1,6 +1,6 @@
 package cz.tadea.item
 
-import cz.tadea.tactical.EDamageType
+import main.kotlin.cz.tadea.tactical.EDamageType
 
 enum class EWeaponType(
         val category: EWeaponCategory,

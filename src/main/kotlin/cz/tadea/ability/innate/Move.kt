@@ -1,11 +1,10 @@
 package cz.tadea.ability.innate
 
-import cz.tadea.ability.Ability
+import main.kotlin.cz.tadea.ability.Ability
 import cz.tadea.ability.EAbility
-import cz.tadea.creature.enums.ECreatureFlag
-import cz.tadea.tactical.creature.CreatureTactical
-import cz.tadea.tactical.battlefield.Battlefield
-import cz.tadea.tactical.battlefield.BattlefieldZone
+import main.kotlin.cz.tadea.tactical.creature.CreatureTactical
+import main.kotlin.cz.tadea.tactical.battlefield.Battlefield
+import main.kotlin.cz.tadea.tactical.battlefield.BattlefieldZone
 
 /**
  * The only ability in the game that requires targeting, as thus is on the same level as abstract ability classes.

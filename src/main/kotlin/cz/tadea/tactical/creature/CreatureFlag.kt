@@ -1,6 +1,6 @@
-package cz.tadea.tactical.creature
+package main.kotlin.cz.tadea.tactical.creature
 
-import cz.tadea.creature.enums.ECreatureFlag
+import main.kotlin.cz.tadea.creature.enums.ECreatureFlag
 
 class CreatureFlag(
         val flag: ECreatureFlag,

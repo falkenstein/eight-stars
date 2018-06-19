@@ -1,4 +1,4 @@
-package cz.tadea.creature.enums
+package main.kotlin.cz.tadea.creature.enums
 
 enum class EArmorType(
         val damageReduction: Int

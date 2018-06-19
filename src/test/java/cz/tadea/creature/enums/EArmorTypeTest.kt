@@ -1,5 +1,6 @@
 package cz.tadea.creature.enums
 
+import main.kotlin.cz.tadea.creature.enums.EArmorType
 import org.junit.Assert.*
 import org.junit.Test
 

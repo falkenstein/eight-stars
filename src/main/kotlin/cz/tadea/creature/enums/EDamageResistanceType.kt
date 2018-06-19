@@ -1,4 +1,4 @@
-package cz.tadea.creature.enums
+package main.kotlin.cz.tadea.creature.enums
 
 /**
  * Defines how much damage of the given type the creature can resist.

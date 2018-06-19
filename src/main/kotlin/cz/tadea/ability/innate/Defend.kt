@@ -1,12 +1,10 @@
 package cz.tadea.ability.innate
 
-import cz.tadea.ability.Ability
-import cz.tadea.ability.AbilityNoTarget
+import main.kotlin.cz.tadea.ability.AbilityNoTarget
 import cz.tadea.ability.EAbility
-import cz.tadea.creature.enums.ECreatureFlag
-import cz.tadea.tactical.creature.CreatureTactical
-import cz.tadea.tactical.battlefield.Battlefield
-import cz.tadea.tactical.battlefield.BattlefieldZone
+import main.kotlin.cz.tadea.creature.enums.ECreatureFlag
+import main.kotlin.cz.tadea.tactical.creature.CreatureTactical
+import main.kotlin.cz.tadea.tactical.battlefield.Battlefield
 
 /**
  * Basic defensive ability - can't be used by a creature on its own, it must be ordered externally.

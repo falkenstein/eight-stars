@@ -1,8 +1,8 @@
-package cz.tadea.creature.company
+package main.kotlin.cz.tadea.creature.company
 
 import cz.tadea.player.Player
-import cz.tadea.singleton.TemplateStore
-import cz.tadea.template.CreatureTemplate
+import main.kotlin.cz.tadea.singleton.TemplateStore
+import main.kotlin.cz.tadea.template.CreatureTemplate
 
 /**
  * Company - consists of a small amount of creatures. Doesn't figure on tactical layer, as there it is just about individual creatures.

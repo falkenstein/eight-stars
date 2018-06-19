@@ -1,9 +1,9 @@
 package cz.tadea.player.action
 
 import cz.tadea.player.Player
-import cz.tadea.tactical.creature.CreatureTactical
-import cz.tadea.ability.Ability
-import cz.tadea.tactical.battlefield.BattlefieldZone
+import main.kotlin.cz.tadea.tactical.creature.CreatureTactical
+import main.kotlin.cz.tadea.ability.Ability
+import main.kotlin.cz.tadea.tactical.battlefield.BattlefieldZone
 
 /**
  * Order given to a creature in tactical arena.

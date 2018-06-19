@@ -1,4 +1,4 @@
-package cz.tadea.creature.enums
+package main.kotlin.cz.tadea.creature.enums
 
 /**
  * Infantry, archer or cavalry.

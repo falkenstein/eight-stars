@@ -1,6 +1,7 @@
 package cz.tadea.tactical.battlefield
 
 import cz.tadea.AbstractTest
+import main.kotlin.cz.tadea.tactical.battlefield.BattlefieldSide
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
 import org.junit.Test

@@ -1,6 +1,7 @@
 package cz.tadea.singleton
 
 import cz.tadea.AbstractTest
+import main.kotlin.cz.tadea.singleton.TemplateStore
 import org.junit.Before
 import org.junit.Test
 

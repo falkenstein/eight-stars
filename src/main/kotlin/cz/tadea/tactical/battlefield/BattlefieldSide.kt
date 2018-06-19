@@ -1,9 +1,9 @@
-package cz.tadea.tactical.battlefield
+package main.kotlin.cz.tadea.tactical.battlefield
 
-import cz.tadea.ability.Ability
+import main.kotlin.cz.tadea.ability.Ability
 import cz.tadea.ability.EAbility
 import cz.tadea.player.Player
-import cz.tadea.tactical.creature.CreatureTactical
+import main.kotlin.cz.tadea.tactical.creature.CreatureTactical
 
 /**
  * Player-owned side of the battlefield.

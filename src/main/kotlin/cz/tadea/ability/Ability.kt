@@ -1,9 +1,9 @@
-package cz.tadea.ability
+package main.kotlin.cz.tadea.ability
 
-import cz.tadea.tactical.creature.CreatureTactical
-import cz.tadea.tactical.battlefield.Battlefield
-import cz.tadea.tactical.battlefield.BattlefieldSide
-import cz.tadea.tactical.battlefield.BattlefieldZone
+import cz.tadea.ability.EAbility
+import main.kotlin.cz.tadea.tactical.creature.CreatureTactical
+import main.kotlin.cz.tadea.tactical.battlefield.Battlefield
+import main.kotlin.cz.tadea.tactical.battlefield.BattlefieldSide
 
 /**
  * Abstract ability class from which all other abilities inherit.

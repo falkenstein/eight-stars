@@ -1,6 +1,6 @@
-package cz.tadea.tactical.battlefield
+package main.kotlin.cz.tadea.tactical.battlefield
 
-import cz.tadea.tactical.creature.CreatureTactical
+import main.kotlin.cz.tadea.tactical.creature.CreatureTactical
 
 /**
  * A single zone on the battlefield that can contain a creature.

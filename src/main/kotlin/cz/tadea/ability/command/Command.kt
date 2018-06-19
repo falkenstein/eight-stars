@@ -1,10 +1,8 @@
-package cz.tadea.ability.command
+package main.kotlin.cz.tadea.ability.command
 
-import cz.tadea.ability.Ability
-import cz.tadea.ability.AbilityNoTarget
-import cz.tadea.tactical.battlefield.Battlefield
-import cz.tadea.tactical.battlefield.BattlefieldZone
-import cz.tadea.tactical.creature.CreatureTactical
+import main.kotlin.cz.tadea.ability.AbilityNoTarget
+import main.kotlin.cz.tadea.tactical.battlefield.Battlefield
+import main.kotlin.cz.tadea.tactical.creature.CreatureTactical
 
 /**
  * One class for all order-based abilities. Unique in that these abilities are evaluated in the order assignment phase.

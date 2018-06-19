@@ -1,4 +1,4 @@
-package cz.tadea.creature.enums
+package main.kotlin.cz.tadea.creature.enums
 
 /**
  * Determines the amount of HP this creature has. Used for better clarification of creature table.

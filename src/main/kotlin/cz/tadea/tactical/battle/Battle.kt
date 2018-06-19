@@ -1,11 +1,11 @@
-package cz.tadea.tactical.battle
+package main.kotlin.cz.tadea.tactical.battle
 
-import cz.tadea.ability.Ability
+import main.kotlin.cz.tadea.ability.Ability
 import cz.tadea.ability.EAbility
-import cz.tadea.creature.company.Company
+import main.kotlin.cz.tadea.creature.company.Company
 import cz.tadea.player.Player
-import cz.tadea.tactical.battlefield.Battlefield
-import cz.tadea.tactical.creature.CreatureTactical
+import main.kotlin.cz.tadea.tactical.battlefield.Battlefield
+import main.kotlin.cz.tadea.tactical.creature.CreatureTactical
 
 /**
  * Represents flow of the battle and processes player input.

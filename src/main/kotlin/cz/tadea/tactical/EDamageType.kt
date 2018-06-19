@@ -1,4 +1,4 @@
-package cz.tadea.tactical
+package main.kotlin.cz.tadea.tactical
 
 /**
  * Possible types of damage. Weapons inflict physical damage, spells from elemental and light schools mostly elemental damage, spiritual

@@ -1,4 +1,4 @@
-package cz.tadea.creature.enums
+package main.kotlin.cz.tadea.creature.enums
 
 /**
  * Flags for creatures. They are used to determined modifiers such as mounted.

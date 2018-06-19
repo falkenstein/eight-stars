@@ -1,9 +1,9 @@
-package cz.tadea.template
+package main.kotlin.cz.tadea.template
 
 import cz.tadea.ability.EAbility
-import cz.tadea.creature.enums.*
 import cz.tadea.item.EWeaponType
-import cz.tadea.tactical.EDamageType
+import main.kotlin.cz.tadea.creature.enums.*
+import main.kotlin.cz.tadea.tactical.EDamageType
 
 /**
  * Used for parsing creature data from JSON.
