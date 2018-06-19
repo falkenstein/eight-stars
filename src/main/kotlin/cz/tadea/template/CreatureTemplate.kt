@@ -15,7 +15,6 @@ class CreatureTemplate(
         val type: EUnitType,
         val health: EHealthAmount,
         val weapons: Set<EWeaponType>,
-        val initiative: EInitiative = EInitiative.NORMAL,
         val flags: Set<ECreatureFlag> = emptySet(),
         val resistances: Map<EDamageType, EDamageResistanceType> = emptyMap(),
         val abilities: Set<EAbility> = emptySet()

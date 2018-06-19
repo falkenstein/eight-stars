@@ -46,7 +46,7 @@ class Battle(
     private fun getCreaturesWithSelectedAbilityByPriority(priority: EAbilityPriority): List<CreatureTactical> {
         return battlefield.sides.values.flatMap { side ->
             side.getCreaturesThatHaveSelectedAbilityWithPriority(priority)
-        }.sortedByDescending { creature -> creature.getInitiative() }
+        }
     }
 
     private fun executeSelectedAbilitiesForCreatures(selectedCreatures: List<CreatureTactical>) {

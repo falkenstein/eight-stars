@@ -3,8 +3,8 @@ package cz.tadea.tactical.battlefield
 import cz.tadea.AbstractTest
 import cz.tadea.singleton.TemplateStore
 import cz.tadea.tactical.creature.CreatureTactical
+import org.junit.Assert.fail
 import org.junit.Test
-import kotlin.test.fail
 
 class BattlefieldTest : AbstractTest() {
     val battlefield = Battlefield(players)

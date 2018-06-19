@@ -5,10 +5,10 @@ import cz.tadea.ability.EAbility
 import cz.tadea.singleton.TemplateStore
 import cz.tadea.tactical.battlefield.Battlefield
 import cz.tadea.tactical.creature.CreatureTactical
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
-import kotlin.test.assertFalse
-import kotlin.test.assertTrue
 
 class AttackTest : AbstractTest() {
 

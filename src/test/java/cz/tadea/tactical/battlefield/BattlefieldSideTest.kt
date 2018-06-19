@@ -1,9 +1,9 @@
 package cz.tadea.tactical.battlefield
 
 import cz.tadea.AbstractTest
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNull
 import org.junit.Test
-import kotlin.test.assertEquals
-import kotlin.test.assertNull
 
 class BattlefieldSideTest : AbstractTest() {
     val side: BattlefieldSide = BattlefieldSide(playerA)
