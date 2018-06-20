@@ -10,27 +10,32 @@ import main.kotlin.cz.tadea.creature.enums.EUnitType
  */
 enum class EWeaponCategory(
         /**
-         * Unit type against which weapon of this type is super effective.
-         */
-        val bonus: EUnitType? = null,
-        /**
          * Determines the highest armor type against which this weapon category is still effective. All armor above this weight severely
          * diminishes weapon effectiveness.
          */
         val armorEffectiveness: EArmorType
 ) {
+    /**
+     * TODO: somehow involve counter-attack mechanics with blades.
+     */
     BLADE(armorEffectiveness = EArmorType.MEDIUM),
     /**
-     * Bonus damage versus archers is somewhat mitigated by bad armor penetration.
+     * TODO: make axes more aggressive in comparison to other weapons
      */
-    AXE(bonus = EUnitType.ARCHER, armorEffectiveness = EArmorType.LIGHT),
+    AXE(armorEffectiveness = EArmorType.LIGHT),
+    /**
+     * Strong against Heavy Armor.
+     */
     BLUNT(armorEffectiveness = EArmorType.HEAVY),
-    POLEARM(bonus = EUnitType.CAVALRY, armorEffectiveness = EArmorType.MEDIUM),
+    /**
+     * While they get no bonus against cavalry, polearms prevent being counter-attacked.
+     */
+    POLEARM(armorEffectiveness = EArmorType.MEDIUM),
     /**
      * Natural weapons such as claws.
      */
     INNATE(armorEffectiveness = EArmorType.LIGHT),
     BOW(armorEffectiveness = EArmorType.MEDIUM),
     CROSSBOW(armorEffectiveness = EArmorType.HEAVY),
-    MUSKET(bonus = EUnitType.INFANTRY, armorEffectiveness = EArmorType.LIGHT)
+    MUSKET(armorEffectiveness = EArmorType.LIGHT)
 }

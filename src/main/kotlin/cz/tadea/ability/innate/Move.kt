@@ -21,7 +21,7 @@ class Move(
     }
 
     fun getValidTargets(): List<BattlefieldZone> {
-        return emptyList()
+        return battlefield.getZonesForMove(user).toList()
     }
 
     fun execute(target: BattlefieldZone) {

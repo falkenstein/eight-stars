@@ -126,14 +126,7 @@ class Battlefield(
      * Prepares set of zones to which the given creature can move.
      */
     fun getZonesForMove(creature: CreatureTactical): Set<BattlefieldZone> {
-        val currentPosition = getZoneOfCreature(creature)
-        if (currentPosition == null) {
-            // The creature can be placed into any free zone in this case.
-            return sides[creature.owner]!!.getAllZones().filter { zone -> zone.canBeMovedInto() }.toSet()
-        } else {
-            val distance: Int = if (creature.getType() == EUnitType.CAVALRY || creature.hasFlag(ECreatureFlag.RUNNER)) 4 else 1
-            return sides[creature.owner]!!.getZonesInDistance(currentPosition, distance).filter { zone -> zone.canBeMovedInto() }.toSet()
-        }
+        return sides[creature.owner]!!.getAllZones().filter { zone -> zone.canBeMovedInto() }.toSet()
     }
 
     /**
