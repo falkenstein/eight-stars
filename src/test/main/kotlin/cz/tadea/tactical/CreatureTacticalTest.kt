@@ -10,7 +10,7 @@ class CreatureTacticalTest : AbstractTest() {
     @Test
     fun testSetupFromTemplate() {
         TemplateStore.scanTemplates()
-        val creature: CreatureTactical = CreatureTactical(playerA, TemplateStore.getCreature("Pikeman"))
-        assert(creature.name == "Pikeman")
+        val creature: CreatureTactical = CreatureTactical(playerA, TemplateStore.getCreature("Hussar"))
+        assert(creature.name == "Hussar")
     }
 }

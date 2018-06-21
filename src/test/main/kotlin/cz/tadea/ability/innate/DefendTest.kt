@@ -21,8 +21,8 @@ class DefendTest : AbstractTest() {
 
     @Test
     fun testDefenderTakesLessDamage() {
-        val creatureA1 = CreatureTactical(playerA, TemplateStore.getCreature("pikeman"))
-        val creatureA2 = CreatureTactical(playerA, TemplateStore.getCreature("pikeman"))
+        val creatureA1 = CreatureTactical(playerA, TemplateStore.getCreature("Hussar"))
+        val creatureA2 = CreatureTactical(playerA, TemplateStore.getCreature("Hussar"))
         val creatureB1 = CreatureTactical(playerB, TemplateStore.getCreature("longswordman"))
         val creatureB2 = CreatureTactical(playerB, TemplateStore.getCreature("longswordman"))
         battlefield.initializeCreature(creatureA1, 1, 0)

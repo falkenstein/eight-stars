@@ -21,8 +21,8 @@ class AttackTest : AbstractTest() {
 
     @Test
     fun testValidMeleeTargeting() {
-        val creatureA = CreatureTactical(playerA, TemplateStore.getCreature("pikeman"))
-        val creatureB = CreatureTactical(playerB, TemplateStore.getCreature("pikeman"))
+        val creatureA = CreatureTactical(playerA, TemplateStore.getCreature("Hussar"))
+        val creatureB = CreatureTactical(playerB, TemplateStore.getCreature("Hussar"))
         battlefield.initializeCreature(creatureA, 1, 0)
         battlefield.initializeCreature(creatureB, 1, 0)
         assertTrue(creatureA.getAbility(EAbility.ATTACK).canBeUsed())
@@ -39,10 +39,10 @@ class AttackTest : AbstractTest() {
 
     @Test
     fun testMeleeCorrectTarget() {
-        val creatureA = CreatureTactical(playerA, TemplateStore.getCreature("pikeman"))
-        val creatureB = CreatureTactical(playerB, TemplateStore.getCreature("pikeman"))
-        val creatureC = CreatureTactical(playerB, TemplateStore.getCreature("pikeman"))
-        val creatureD = CreatureTactical(playerB, TemplateStore.getCreature("pikeman"))
+        val creatureA = CreatureTactical(playerA, TemplateStore.getCreature("Hussar"))
+        val creatureB = CreatureTactical(playerB, TemplateStore.getCreature("Hussar"))
+        val creatureC = CreatureTactical(playerB, TemplateStore.getCreature("Hussar"))
+        val creatureD = CreatureTactical(playerB, TemplateStore.getCreature("Hussar"))
         battlefield.initializeCreature(creatureA, 1, 0)
         battlefield.initializeCreature(creatureB, 1, 0)
         battlefield.initializeCreature(creatureC, 0, 0)
@@ -56,8 +56,8 @@ class AttackTest : AbstractTest() {
 
     @Test
     fun testValidRangedTargeting() {
-        val creatureA = CreatureTactical(playerA, TemplateStore.getCreature("crossbowman"))
-        val creatureB = CreatureTactical(playerB, TemplateStore.getCreature("pikeman"))
+        val creatureA = CreatureTactical(playerA, TemplateStore.getCreature("Musketeer"))
+        val creatureB = CreatureTactical(playerB, TemplateStore.getCreature("Hussar"))
         battlefield.initializeCreature(creatureA, 1, 0)
         battlefield.initializeCreature(creatureB, 1, 0)
         assertFalse(creatureA.getAbility(EAbility.ATTACK).canBeUsed())
@@ -73,8 +73,8 @@ class AttackTest : AbstractTest() {
 
     @Test
     fun testUsage() {
-        val creatureA = CreatureTactical(playerA, TemplateStore.getCreature("pikeman"))
-        val creatureB = CreatureTactical(playerB, TemplateStore.getCreature("pikeman"))
+        val creatureA = CreatureTactical(playerA, TemplateStore.getCreature("Hussar"))
+        val creatureB = CreatureTactical(playerB, TemplateStore.getCreature("Hussar"))
         battlefield.initializeCreature(creatureA, 1, 0)
         battlefield.initializeCreature(creatureB, 1, 0)
         val hpBefore = creatureB.hp

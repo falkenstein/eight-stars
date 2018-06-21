@@ -37,5 +37,5 @@ enum class EWeaponCategory(
     INNATE(armorEffectiveness = EArmorType.LIGHT),
     BOW(armorEffectiveness = EArmorType.MEDIUM),
     CROSSBOW(armorEffectiveness = EArmorType.HEAVY),
-    MUSKET(armorEffectiveness = EArmorType.LIGHT)
+    FIREARM(armorEffectiveness = EArmorType.LIGHT)
 }

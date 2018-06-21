@@ -20,7 +20,7 @@ class MoveTest : AbstractTest() {
 
     @Test
     fun testCorrectMove() {
-        val creatureA = CreatureTactical(playerA, TemplateStore.getCreature("pikeman"))
+        val creatureA = CreatureTactical(playerA, TemplateStore.getCreature("Hussar"))
         battlefield.initializeCreature(creatureA, 0, 0)
         battlefield.useAbility(creatureA, EAbility.MOVE, battlefield.getZone(playerA, 1, 1))
         assertTrue(battlefield.getZone(playerA, 0, 0).creature == null)

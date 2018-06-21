@@ -36,7 +36,7 @@ class BattlefieldTest : AbstractTest() {
     @Test
     fun testInsertCreature() {
         TemplateStore.scanTemplates()
-        val creature = CreatureTactical(testPlayer, TemplateStore.getCreature("Pikeman"))
+        val creature = CreatureTactical(testPlayer, TemplateStore.getCreature("Hussar"))
         battlefield.initializeCreature(creature, 0, 0)
         try {
             battlefield.moveCreature(creature, 7, 0)

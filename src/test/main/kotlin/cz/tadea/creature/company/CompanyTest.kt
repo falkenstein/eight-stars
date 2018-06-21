@@ -20,20 +20,16 @@ class CompanyTest : AbstractTest() {
         val companyA = Company(
                 playerA,
                 listOf(
-                        TemplateStore.getCreature("pikeman"),
+                        TemplateStore.getCreature("Hussar"),
                         TemplateStore.getCreature("longswordman"),
                         TemplateStore.getCreature("longswordman"),
-                        TemplateStore.getCreature("pikeman")
+                        TemplateStore.getCreature("Hussar")
                 ),
-                listOf(
-                        TemplateStore.getCreature("crossbowman"),
-                        TemplateStore.getCreature("crossbowman"),
-                        TemplateStore.getCreature("crossbowman")
-                ),
+                listOf(),
                 TemplateStore.getCreature("captain")
         )
 
-        val companyB = Company(playerB, listOf("pikeman", "longswordman", "longswordman", "pikeman", "captain", "crossbowman", "crossbowman", "crossbowman"))
+        val companyB = Company(playerB, listOf("Hussar", "longswordman", "longswordman", "Hussar", "captain"))
 
         val battle = Battle(players, mapOf(Pair(playerA, companyA), Pair(playerB, companyB)))
 

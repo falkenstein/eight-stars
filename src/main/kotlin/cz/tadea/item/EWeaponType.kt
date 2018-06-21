@@ -1,8 +1,5 @@
 package main.kotlin.cz.tadea.item
 
-import main.kotlin.cz.tadea.item.EWeaponCategory
-import main.kotlin.cz.tadea.item.EWeaponDamageAmount
-import main.kotlin.cz.tadea.item.EWeaponStyle
 import main.kotlin.cz.tadea.tactical.EDamageType
 
 enum class EWeaponType(
@@ -20,5 +17,7 @@ enum class EWeaponType(
     /**
      * Strong ranged weapon, effective even against heavy armor. Has to be reloaded after shooting.
      */
-    CROSSBOW(category = EWeaponCategory.CROSSBOW, style = EWeaponStyle.RANGED, damage = EWeaponDamageAmount.HIGH)
+    CROSSBOW(category = EWeaponCategory.CROSSBOW, style = EWeaponStyle.RANGED, damage = EWeaponDamageAmount.HIGH),
+    MUSKET(category = EWeaponCategory.FIREARM, style = EWeaponStyle.RANGED, damage = EWeaponDamageAmount.VERY_HIGH),
+    PISTOLS(category = EWeaponCategory.FIREARM, style = EWeaponStyle.RANGED, damage = EWeaponDamageAmount.MODERATE)
 }

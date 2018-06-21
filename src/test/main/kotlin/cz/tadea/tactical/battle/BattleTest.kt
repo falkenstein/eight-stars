@@ -30,10 +30,10 @@ class BattleTest : AbstractTest() {
         val companyB = Company(
                 playerB,
                 listOf(
-                        TemplateStore.getCreature("pikeman"),
-                        TemplateStore.getCreature("pikeman"),
-                        TemplateStore.getCreature("pikeman"),
-                        TemplateStore.getCreature("pikeman")
+                        TemplateStore.getCreature("Hussar"),
+                        TemplateStore.getCreature("Hussar"),
+                        TemplateStore.getCreature("Hussar"),
+                        TemplateStore.getCreature("Hussar")
                 ),
                 listOf(),
                 TemplateStore.getCreature("captain")

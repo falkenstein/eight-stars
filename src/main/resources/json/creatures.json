@@ -1,15 +1,5 @@
 [
   {
-    "name": "Pikeman",
-    "race": "HUMAN",
-    "type": "INFANTRY",
-    "armor": "HEAVY",
-    "health": "HIGH",
-    "weapons": [
-      "PIKE"
-    ]
-  },
-  {
     "name": "Longswordman",
     "race": "HUMAN",
     "type": "INFANTRY",
@@ -17,6 +7,16 @@
     "health": "HIGH",
     "weapons": [
       "LONGSWORD_SHIELD"
+    ]
+  },
+  {
+    "name": "Musketeer",
+    "race": "HUMAN",
+    "type": "ARCHER",
+    "armor": "LIGHT",
+    "health": "MODERATE",
+    "weapons": [
+      "MUSKET"
     ]
   },
   {
@@ -30,6 +30,17 @@
     ]
   },
   {
+    "name": "Dragoon",
+    "race": "HUMAN",
+    "type": "CAVALRY",
+    "armor": "LIGHT",
+    "health": "MODERATE",
+    "weapons": [
+      "SABER",
+      "PISTOLS"
+    ]
+  },
+  {
     "name": "Cavalier",
     "race": "HUMAN",
     "type": "CAVALRY",
@@ -37,16 +48,6 @@
     "health": "VERY_HIGH",
     "weapons": [
       "LONGSWORD_SHIELD"
-    ]
-  },
-  {
-    "name": "Crossbowman",
-    "race": "HUMAN",
-    "type": "ARCHER",
-    "armor": "MEDIUM",
-    "health": "MODERATE",
-    "weapons": [
-      "CROSSBOW"
     ]
   },
   {
