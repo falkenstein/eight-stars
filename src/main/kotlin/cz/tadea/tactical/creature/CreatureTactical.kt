@@ -17,7 +17,7 @@ import main.kotlin.cz.tadea.template.CreatureTemplate
  */
 class CreatureTactical(
         val owner: Player,
-        private val template: CreatureTemplate
+        val template: CreatureTemplate
 ) {
     private val flags: MutableList<CreatureFlag> = mutableListOf()
     /**

@@ -19,5 +19,5 @@ enum class EWeaponType(
      */
     CROSSBOW(category = EWeaponCategory.CROSSBOW, style = EWeaponStyle.RANGED, damage = EWeaponDamageAmount.HIGH),
     MUSKET(category = EWeaponCategory.FIREARM, style = EWeaponStyle.RANGED, damage = EWeaponDamageAmount.VERY_HIGH),
-    PISTOLS(category = EWeaponCategory.FIREARM, style = EWeaponStyle.RANGED, damage = EWeaponDamageAmount.MODERATE)
+    PISTOL(category = EWeaponCategory.FIREARM, style = EWeaponStyle.RANGED, damage = EWeaponDamageAmount.MODERATE)
 }
