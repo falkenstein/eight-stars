@@ -20,6 +20,10 @@ enum class EWeaponCategory(
      */
     BLADE(armorEffectiveness = EArmorType.MEDIUM),
     /**
+     * Groups together all weapoons conjured via magical means.
+     */
+    MAGIC_WEAPON(armorEffectiveness = EArmorType.HEAVY),
+    /**
      * TODO: make axes more aggressive in comparison to other weapons
      */
     AXE(armorEffectiveness = EArmorType.LIGHT),
@@ -31,11 +35,18 @@ enum class EWeaponCategory(
      * While they get no bonus against cavalry, polearms prevent being counter-attacked.
      */
     POLEARM(armorEffectiveness = EArmorType.MEDIUM),
+    SCYTHE(armorEffectiveness = EArmorType.NONE),
+    /**
+     * Staves are used for their magical effect rather than for combat.
+     */
+    STAFF(armorEffectiveness = EArmorType.NONE),
     /**
      * Natural weapons such as claws.
      */
     INNATE(armorEffectiveness = EArmorType.LIGHT),
+    UNARMED(armorEffectiveness = EArmorType.NONE),
     BOW(armorEffectiveness = EArmorType.MEDIUM),
     CROSSBOW(armorEffectiveness = EArmorType.HEAVY),
-    FIREARM(armorEffectiveness = EArmorType.LIGHT)
+    FIREARM(armorEffectiveness = EArmorType.LIGHT),
+    GLAIVE(armorEffectiveness = EArmorType.MEDIUM) // ranged weapon utilised by Art morfs, returning like a boomerang
 }

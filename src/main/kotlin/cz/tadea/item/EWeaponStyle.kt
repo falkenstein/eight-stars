@@ -12,5 +12,6 @@ enum class EWeaponStyle(
     DUAL,
     DOUBLE,
     GREAT,
+    UNARMED,
     RANGED
 }
