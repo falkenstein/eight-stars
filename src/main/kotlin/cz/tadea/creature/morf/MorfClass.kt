@@ -13,7 +13,7 @@ enum class MorfClass(
         val theming: String = ""
 ) {
     BLADEMASTER(
-            EAspect.COMBAT, EAspect.COMBAT, EArmorType.MEDIUM,
+            EAspect.COMBAT, EAspect.COMBAT, EArmorType.HEAVY,
             setOf(EWeaponStyle.DOUBLE, EWeaponStyle.DUAL, EWeaponStyle.SINGLE),
             setOf(EWeaponCategory.BLADE, EWeaponCategory.FIREARM)
     ),
@@ -43,7 +43,7 @@ enum class MorfClass(
             setOf(EWeaponCategory.BLADE)
     ),
     SEER(
-            EAspect.LIGHT, EAspect.LIGHT, EArmorType.LIGHT,
+            EAspect.LIGHT, EAspect.LIGHT, EArmorType.MEDIUM,
             setOf(EWeaponStyle.SHIELD),
             setOf(EWeaponCategory.BLADE)
     ),
@@ -78,17 +78,17 @@ enum class MorfClass(
             setOf(EWeaponCategory.POLEARM, EWeaponCategory.FIREARM)
     ),
     VINDICATOR(
-            EAspect.COMBAT, EAspect.LIGHT, EArmorType.MEDIUM,
+            EAspect.COMBAT, EAspect.LIGHT, EArmorType.HEAVY,
             setOf(EWeaponStyle.SINGLE, EWeaponStyle.DOUBLE),
             setOf(EWeaponCategory.MAGIC_WEAPON, EWeaponCategory.BLADE)
     ),
     MYRMIDON(
             EAspect.COMBAT, EAspect.ART, EArmorType.MEDIUM,
             setOf(EWeaponStyle.DOUBLE, EWeaponStyle.RANGED),
-            setOf(EWeaponCategory.BLADE, EWeaponCategory.GLAIVE)
+            setOf(EWeaponCategory.POLEARM, EWeaponCategory.GLAIVE)
     ),
     WARDEN(
-            EAspect.NATURE, EAspect.ARCANE, EArmorType.LIGHT,
+            EAspect.NATURE, EAspect.ARCANE, EArmorType.MEDIUM,
             setOf(EWeaponStyle.DOUBLE),
             setOf(EWeaponCategory.BLADE)
     ),
