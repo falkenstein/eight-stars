@@ -1,0 +1,733 @@
+[
+  {
+    "class": "BLADEMASTER",
+    "grandmaster": [
+      "BLADE",
+      "SINGLE",
+      "ARMSMASTER"
+    ],
+    "master": [
+      "SMITHING",
+      "HEAVY_ARMOR",
+      "TACTICS"
+    ],
+    "expert": [
+      "DOUBLE",
+      "DUAL",
+      "GREAT",
+      "FIREARM",
+      "ATHLETICS"
+    ],
+    "basic": [
+    ]
+  },
+  {
+    "class": "DRUID",
+    "grandmaster": [
+      "NATURAL_MAGIC",
+      "HERBALISM",
+      "ANIMALS"
+    ],
+    "master": [
+      "STAFF",
+      "DOUBLE",
+      "ATHLETICS"
+    ],
+    "expert": [
+      "SURVIVAL",
+      "LIGHT_ARMOR",
+      "SPELLCRAFT",
+      "SPIRITUALITY"
+    ],
+    "basic": [
+    ]
+  },
+  {
+    "class": "LOREKEEPER",
+    "grandmaster": [
+      "ARCANE_MAGIC",
+      "LORE",
+      "SPELLCRAFT"
+    ],
+    "master": [
+      "ALCHEMY",
+      "FIREARM",
+      "EVOCATION"
+    ],
+    "expert": [
+      "UNARMORED",
+      "RUNES",
+      "ENGINEERING"
+    ],
+    "basic": [
+      "SINGLE",
+      "CROSSBOW"
+    ]
+  },
+  {
+    "class": "BISHOP",
+    "grandmaster": [
+      "SPIRIT_MAGIC",
+      "SPIRITUALITY",
+      "POLEARM"
+    ],
+    "master": [
+      "GREAT",
+      "DEVOTION",
+      "ARMSMASTER"
+    ],
+    "expert": [
+      "NECROMANCY",
+      "ENCHANTMENT",
+      "MEDIUM_ARMOR"
+    ],
+    "basic": [
+      "CROSSBOW"
+    ]
+  },
+  {
+    "class": "MESMER",
+    "grandmaster": [
+      "TELEPATHY",
+      "TELEKINESIS",
+      "FOCUS"
+    ],
+    "master": [
+      "LORE",
+      "FLIGHT",
+      "COERCION"
+    ],
+    "expert": [
+      "UNARMORED",
+      "ALCHEMY"
+    ],
+    "basic": [
+      "SINGLE"
+    ]
+  },
+  {
+    "class": "STALKER",
+    "grandmaster": [
+      "STEALTH",
+      "THIEVERY",
+      "BLADE"
+    ],
+    "master": [
+      "SHADOW_MAGIC",
+      "DUAL",
+      "ACROBATICS"
+    ],
+    "expert": [
+      "POISON",
+      "CROSSBOW"
+    ],
+    "basic": [
+    ]
+  },
+  {
+    "class": "SEER",
+    "grandmaster": [
+      "LIGHT_MAGIC",
+      "EVOCATION",
+      "HEALING"
+    ],
+    "master": [
+      "SPELLCRAFT",
+      "MEDIUM_ARMOR",
+      "SHIELD"
+    ],
+    "expert": [
+      "DEVOTION",
+      "BLADE"
+    ],
+    "basic": [
+    ]
+  },
+  {
+    "class": "ROGUE",
+    "grandmaster": [
+      "ACROBATICS",
+      "RUNES",
+      "GLAIVE"
+    ],
+    "master": [
+      "SINGLE",
+      "LIGHT_ARMOR",
+      "COERCION"
+    ],
+    "expert": [
+      "ALCHEMY",
+      "ENGINEERING"
+    ],
+    "basic": [
+    ]
+  },
+  {
+    "class": "RANGER",
+    "grandmaster": [
+      "ATHLETICS",
+      "DUAL",
+      "SURVIVAL"
+    ],
+    "master": [
+      "AXE",
+      "HERBALISM",
+      "BOW"
+    ],
+    "expert": [
+      "LIGHT_ARMOR",
+      "NATURAL_MAGIC",
+      "STEALTH",
+      "ARMSMASTER",
+      "ANIMALS"
+    ],
+    "basic": [
+    ]
+  },
+  {
+    "class": "TEMPEST",
+    "grandmaster": [
+      "FIREARM",
+      "DUAL",
+      "SPELLCRAFT"
+    ],
+    "master": [
+      "BLADE",
+      "ARCANE_MAGIC",
+      "EVOCATION"
+    ],
+    "expert": [
+      "ALCHEMY",
+      "LORE",
+      "ATHLETICS",
+      "UNARMORED",
+      "ARMSMASTER"
+    ],
+    "basic": [
+    ]
+  },
+  {
+    "class": "SEEKER",
+    "grandmaster": [
+      "HEAVY_ARMOR",
+      "BLUNT",
+      "SHIELD"
+    ],
+    "master": [
+      "SMITHING",
+      "SPIRITUALITY",
+      "GREAT"
+    ],
+    "expert": [
+      "SPIRIT_MAGIC",
+      "DEVOTION",
+      "ATHLETICS",
+      "ARMSMASTER"
+    ],
+    "basic": [
+    ]
+  },
+  {
+    "class": "GUARDIAN",
+    "grandmaster": [
+      "MEDIUM_ARMOR",
+      "GREAT",
+      "TELEKINESIS"
+    ],
+    "master": [
+      "BLADE",
+      "ATHLETICS",
+      "ARMSMASTER"
+    ],
+    "expert": [
+      "FLIGHT",
+      "ATHLETICS",
+      "TELEPATHY"
+    ],
+    "basic": [
+    ]
+  },
+  {
+    "class": "INQUISITOR",
+    "grandmaster": [
+      "POLEARM",
+      "GREAT",
+      "ARMSMASTER"
+    ],
+    "master": [
+      "HEAVY_ARMOR",
+      "FIREARM",
+      "SHADOW_MAGIC"
+    ],
+    "expert": [
+      "SPIRITUALITY",
+      "POISON",
+      "LORE"
+    ],
+    "basic": [
+    ]
+  },
+  {
+    "class": "VINDICATOR",
+    "grandmaster": [
+      "DEVOTION",
+      "BLADE",
+      "TACTICS"
+    ],
+    "master": [
+      "MEDIUM_ARMOR",
+      "ARMSMASTER",
+      "LIGHT_MAGIC"
+    ],
+    "expert": [
+      "COERCION",
+      "SINGLE",
+      "GREAT",
+      "DOUBLE",
+      "HEALING",
+      "LORE"
+    ],
+    "basic": [
+    ]
+  },
+  {
+    "class": "MYRMIDON",
+    "grandmaster": [
+      "DOUBLE",
+      "MEDIUM_ARMOR",
+      "GLAIVE"
+    ],
+    "master": [
+      "ARMSMASTER",
+      "ATHLETICS",
+      "ACROBATICS"
+    ],
+    "expert": [
+      "POLEARM",
+      "BLADE",
+      "COERCION",
+      "ENGINEERING",
+      "RUNES"
+    ],
+    "basic": [
+    ]
+  },
+  {
+    "class": "WARDEN",
+    "grandmaster": [
+      "MEDIUM_ARMOR",
+      "DOUBLE",
+      "SPELLCRAFT"
+    ],
+    "master": [
+      "ARCANE_MAGIC",
+      "NATURAL_MAGIC",
+      "BLADE"
+    ],
+    "expert": [
+      "ALCHEMY",
+      "HERBALISM",
+      "ATHLETICS",
+      "LORE",
+      "SURVIVAL"
+    ],
+    "basic": [
+    ]
+  },
+  {
+    "class": "MYSTIC",
+    "grandmaster": [
+      "SPIRIT_MAGIC",
+      "NATURAL_MAGIC",
+      "SPIRITUALITY"
+    ],
+    "master": [
+      "HERBALISM",
+      "ANIMALS",
+      "HEALING"
+    ],
+    "expert": [
+      "BLADE",
+      "DUAL",
+      "UNARMORED",
+      "COERCION",
+      "LORE",
+      "SURVIVAL"
+    ],
+    "basic": [
+    ]
+  },
+  {
+    "class": "KESTREL",
+    "grandmaster": [
+      "BOW",
+      "ANIMALS",
+      "LIGHT_ARMOR"
+    ],
+    "master": [
+      "ARMSMASTER",
+      "SURVIVAL",
+      "TELEPATHY"
+    ],
+    "expert": [
+      "NATURAL_MAGIC",
+      "FOCUS",
+      "ATHLETICS",
+      "ACROBATICS",
+      "TELEKINESIS"
+    ],
+    "basic": [
+    ]
+  },
+  {
+    "class": "AVENGER",
+    "grandmaster": [
+      "SURVIVAL",
+      "POISON",
+      "LIGHT_ARMOR"
+    ],
+    "master": [
+      "BLADE",
+      "DUAL",
+      "STEALTH"
+    ],
+    "expert": [
+      "NATURAL_MAGIC",
+      "SHADOW_MAGIC",
+      "ACROBATICS",
+      "ALCHEMY"
+    ],
+    "basic": [
+    ]
+  },
+  {
+    "class": "CELEBRANT",
+    "grandmaster": [
+      "EVOCATION",
+      "HERBALISM",
+      "NATURAL_MAGIC"
+    ],
+    "master": [
+      "MEDIUM_ARMOR",
+      "HEALING",
+      "LIGHT_MAGIC"
+    ],
+    "expert": [
+      "SHIELD",
+      "BLADE"
+    ],
+    "basic": [
+    ]
+  },
+  {
+    "class": "STRIDER",
+    "grandmaster": [
+      "BOW",
+      "ACROBATICS",
+      "SURVIVAL"
+    ],
+    "master": [
+      "LIGHT_ARMOR",
+      "ANIMALS",
+      "RUNES"
+    ],
+    "expert": [
+      "NATURAL_MAGIC",
+      "HERBALISM"
+    ],
+    "basic": [
+    ]
+  },
+  {
+    "class": "EIDOLON",
+    "grandmaster": [
+      "UNARMED",
+      "UNARMORED",
+      "ENCHANTMENT"
+    ],
+    "master": [
+      "ARCANE_MAGIC",
+      "ACROBATICS",
+      "LORE"
+    ],
+    "expert": [
+      "SPIRIT_MAGIC",
+      "ALCHEMY"
+    ],
+    "basic": [
+    ]
+  },
+  {
+    "class": "RIDDLER",
+    "grandmaster": [
+      "TELEPATHY",
+      "ARCANE_MAGIC",
+      "FOCUS"
+    ],
+    "master": [
+      "LORE",
+      "ALCHEMY",
+      "FLIGHT"
+    ],
+    "expert": [
+      "TELEKINESIS",
+      "UNARMORED",
+      "BLADE",
+      "SINGLE"
+    ],
+    "basic": [
+    ]
+  },
+  {
+    "class": "SHIFTER",
+    "grandmaster": [
+      "THIEVERY",
+      "SHADOW_MAGIC",
+      "STEALTH"
+    ],
+    "master": [
+      "GREAT",
+      "POLEARM",
+      "ARCANE_MAGIC",
+      "SPELLCRAFT"
+    ],
+    "expert": [
+    ],
+    "basic": [
+    ]
+  },
+  {
+    "class": "ARBITER",
+    "grandmaster": [
+      "STAFF",
+      "ARCANE_MAGIC",
+      "UNARMORED"
+    ],
+    "master": [
+      "DOUBLE",
+      "LIGHT_MAGIC",
+      "SPELLCRAFT"
+    ],
+    "expert": [
+    ],
+    "basic": [
+    ]
+  },
+  {
+    "class": "SCRIVENER",
+    "grandmaster": [
+      "ENGINEERING",
+      "ALCHEMY",
+      "RUNES"
+    ],
+    "master": [
+      "ARCANE_MAGIC",
+      "SPELLCRAFT",
+      "LORE"
+    ],
+    "expert": [
+      "UNARMORED",
+      "GLAIVE"
+    ],
+    "basic": [
+      "BLADE",
+      "SINGLE"
+    ]
+  },
+  {
+    "class": "REDEEMER",
+    "grandmaster": [
+      "DOUBLE",
+      "BLADE",
+      "SPIRIT_MAGIC"
+    ],
+    "master": [
+      "UNARMORED",
+      "TELEPATHY",
+      "TELEKINESIS"
+    ],
+    "expert": [
+      "SPIRITUALITY",
+      "FOCUS"
+    ],
+    "basic": [
+    ]
+  },
+  {
+    "class": "WRAITH",
+    "grandmaster": [
+      "NECROMANCY",
+      "SHADOW_MAGIC",
+      "SPIRITUALITY"
+    ],
+    "master": [
+      "SPIRIT_MAGIC",
+      "LORE",
+      "STEALTH"
+    ],
+    "expert": [
+      "POISON",
+      "RUNES"
+    ],
+    "basic": [
+    ]
+  },
+  {
+    "class": "DIVINER",
+    "grandmaster": [
+      "CROSSBOW",
+      "LIGHT_MAGIC",
+      "ENCHANTMENT"
+    ],
+    "master": [
+      "SPIRIT_MAGIC",
+      "SPIRITUALITY",
+      "DEVOTION"
+    ],
+    "expert": [
+      "HEALING",
+      "EVOCATION"
+    ],
+    "basic": [
+    ]
+  },
+  {
+    "class": "ARCHON",
+    "grandmaster": [
+      "AXE",
+      "DEVOTION",
+      "COERCION"
+    ],
+    "master": [
+      "LIGHT_MAGIC",
+      "DEVOTION",
+      "SINGLE"
+    ],
+    "expert": [
+      "HEALING",
+      "EVOCATION",
+      "ACROBATICS",
+      "ENGINEERING"
+    ],
+    "basic": [
+    ]
+  },
+  {
+    "class": "SENTINEL",
+    "grandmaster": [
+      "DUAL",
+      "TELEKINESIS",
+      "FOCUS"
+    ],
+    "master": [
+      "SHADOW_MAGIC",
+      "STEALTH",
+      "BLADE"
+    ],
+    "expert": [
+      "FLIGHT",
+      "THIEVERY",
+      "TELEPATHY",
+      "ACROBATICS"
+    ],
+    "basic": [
+    ]
+  },
+  {
+    "class": "CONFESSOR",
+    "grandmaster": [
+      "BLUNT",
+      "GREAT",
+      "DEVOTION"
+    ],
+    "master": [
+      "HEAVY_ARMOR",
+      "TELEKINESIS",
+      "FOCUS"
+    ],
+    "expert": [
+      "TELEPATHY",
+      "HEALING",
+      "LIGHT_MAGIC",
+      "ATHLETICS"
+    ],
+    "basic": [
+    ]
+  },
+  {
+    "class": "REAVER",
+    "grandmaster": [
+      "TELEPATHY",
+      "GLAIVE",
+      "SINGLE"
+    ],
+    "master": [
+      "UNARMORED",
+      "RUNES",
+      "COERCION"
+    ],
+    "expert": [
+      "BLADE",
+      "ACROBATICS",
+      "TELEKINESIS"
+    ],
+    "basic": [
+    ]
+  },
+  {
+    "class": "HERETIC",
+    "grandmaster": [
+      "SHADOW_MAGIC",
+      "LIGHT_MAGIC",
+      "EVOCATION"
+    ],
+    "master": [
+      "STEALTH",
+      "THIEVERY",
+      "UNARMORED"
+    ],
+    "expert": [
+      "BLADE",
+      "DUAL"
+    ],
+    "basic": [
+    ]
+  },
+  {
+    "class": "LURKER",
+    "grandmaster": [
+      "STEALTH",
+      "THIEVERY",
+      "ACROBATICS"
+    ],
+    "master": [
+      "ENGINEERING",
+      "RUNES",
+      "POISON"
+    ],
+    "expert": [
+      "SHADOW_MAGIC",
+      "BLADE",
+      "SINGLE"
+    ],
+    "basic": [
+    ]
+  },
+  {
+    "class": "HELLION",
+    "grandmaster": [
+      "RUNES",
+      "HEALING",
+      "FIREARM"
+    ],
+    "master": [
+      "COERCION",
+      "DEVOTION",
+      "LIGHT_MAGIC"
+    ],
+    "expert": [
+    ],
+    "basic": [
+    ]
+  }
+]

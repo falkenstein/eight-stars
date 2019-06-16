@@ -9,8 +9,7 @@ enum class MorfClass(
         val aspectB: EAspect,
         val armor: EArmorType,
         val weaponStyle: Set<EWeaponStyle>,
-        val weaponType: Set<EWeaponCategory>,
-        val theming: String = ""
+        val weaponType: Set<EWeaponCategory>
 ) {
     BLADEMASTER(
             EAspect.COMBAT, EAspect.COMBAT, EArmorType.HEAVY,
@@ -39,7 +38,7 @@ enum class MorfClass(
     ),
     STALKER(
             EAspect.SHADOW, EAspect.SHADOW, EArmorType.LIGHT,
-            setOf(EWeaponStyle.DUAL),
+            setOf(EWeaponStyle.SINGLE),
             setOf(EWeaponCategory.BLADE)
     ),
     SEER(
@@ -113,7 +112,7 @@ enum class MorfClass(
             setOf(EWeaponCategory.STAFF)
     ),
     STRIDER(
-            EAspect.NATURE, EAspect.ART, EArmorType.MEDIUM,
+            EAspect.NATURE, EAspect.ART, EArmorType.LIGHT,
             setOf(EWeaponStyle.RANGED, EWeaponStyle.SINGLE),
             setOf(EWeaponCategory.BOW, EWeaponCategory.AXE)
     ),
