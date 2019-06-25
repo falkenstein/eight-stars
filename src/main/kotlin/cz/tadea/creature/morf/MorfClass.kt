@@ -1,194 +1,117 @@
 package main.kotlin.cz.tadea.creature.morf
 
 import main.kotlin.cz.tadea.creature.enums.EArmorType
-import main.kotlin.cz.tadea.item.EWeaponCategory
-import main.kotlin.cz.tadea.item.EWeaponStyle
 
 enum class MorfClass(
         val aspectA: EAspect,
-        val aspectB: EAspect,
-        val armor: EArmorType,
-        val weaponStyle: Set<EWeaponStyle>,
-        val weaponType: Set<EWeaponCategory>
+        val aspectB: EAspect
 ) {
     BLADEMASTER(
-            EAspect.COMBAT, EAspect.COMBAT, EArmorType.HEAVY,
-            setOf(EWeaponStyle.DOUBLE, EWeaponStyle.DUAL, EWeaponStyle.SINGLE),
-            setOf(EWeaponCategory.BLADE, EWeaponCategory.FIREARM)
+            EAspect.COMBAT, EAspect.COMBAT
     ),
     DRUID(
-            EAspect.NATURE, EAspect.NATURE, EArmorType.LIGHT,
-            setOf(EWeaponStyle.DOUBLE),
-            setOf(EWeaponCategory.STAFF)
+            EAspect.NATURE, EAspect.NATURE
     ),
     LOREKEEPER(
-            EAspect.ARCANE, EAspect.ARCANE, EArmorType.NONE,
-            setOf(EWeaponStyle.SINGLE),
-            setOf(EWeaponCategory.MAGIC_WEAPON)
+            EAspect.ARCANE, EAspect.ARCANE
     ),
     BISHOP(
-            EAspect.SPIRIT, EAspect.SPIRIT, EArmorType.MEDIUM,
-            setOf(EWeaponStyle.GREAT),
-            setOf(EWeaponCategory.POLEARM)
+            EAspect.SPIRIT, EAspect.SPIRIT
     ),
     MESMER(
-            EAspect.PSIONIC, EAspect.PSIONIC, EArmorType.NONE,
-            setOf(EWeaponStyle.SINGLE),
-            setOf(EWeaponCategory.MAGIC_WEAPON)
+            EAspect.PSIONIC, EAspect.PSIONIC
     ),
     STALKER(
-            EAspect.SHADOW, EAspect.SHADOW, EArmorType.LIGHT,
-            setOf(EWeaponStyle.SINGLE),
-            setOf(EWeaponCategory.BLADE)
+            EAspect.SHADOW, EAspect.SHADOW
     ),
     SEER(
-            EAspect.LIGHT, EAspect.LIGHT, EArmorType.MEDIUM,
-            setOf(EWeaponStyle.SHIELD),
-            setOf(EWeaponCategory.BLADE)
+            EAspect.LIGHT, EAspect.LIGHT
     ),
     ROGUE(
-            EAspect.ART, EAspect.ART, EArmorType.LIGHT,
-            setOf(EWeaponStyle.SINGLE, EWeaponStyle.RANGED),
-            setOf(EWeaponCategory.BLADE, EWeaponCategory.GLAIVE)
+            EAspect.ART, EAspect.ART
     ),
     RANGER(
-            EAspect.COMBAT, EAspect.NATURE, EArmorType.LIGHT,
-            setOf(EWeaponStyle.DUAL, EWeaponStyle.RANGED),
-            setOf(EWeaponCategory.AXE, EWeaponCategory.BOW)
+            EAspect.COMBAT, EAspect.NATURE
     ),
     TEMPEST(
-            EAspect.COMBAT, EAspect.ARCANE, EArmorType.NONE,
-            setOf(EWeaponStyle.DUAL, EWeaponStyle.RANGED),
-            setOf(EWeaponCategory.MAGIC_WEAPON, EWeaponCategory.FIREARM)
+            EAspect.COMBAT, EAspect.ARCANE
     ),
     SEEKER(
-            EAspect.COMBAT, EAspect.SPIRIT, EArmorType.HEAVY,
-            setOf(EWeaponStyle.SHIELD, EWeaponStyle.GREAT),
-            setOf(EWeaponCategory.BLUNT)
+            EAspect.COMBAT, EAspect.SPIRIT
     ),
     GUARDIAN(
-            EAspect.COMBAT, EAspect.PSIONIC, EArmorType.MEDIUM,
-            setOf(EWeaponStyle.GREAT, EWeaponStyle.DOUBLE),
-            setOf(EWeaponCategory.BLADE)
+            EAspect.COMBAT, EAspect.PSIONIC
     ),
     INQUISITOR(
-            EAspect.COMBAT, EAspect.SHADOW, EArmorType.HEAVY,
-            setOf(EWeaponStyle.GREAT, EWeaponStyle.RANGED),
-            setOf(EWeaponCategory.POLEARM, EWeaponCategory.FIREARM)
+            EAspect.COMBAT, EAspect.SHADOW
     ),
     VINDICATOR(
-            EAspect.COMBAT, EAspect.LIGHT, EArmorType.HEAVY,
-            setOf(EWeaponStyle.SINGLE, EWeaponStyle.DOUBLE),
-            setOf(EWeaponCategory.MAGIC_WEAPON, EWeaponCategory.BLADE)
+            EAspect.COMBAT, EAspect.LIGHT
     ),
     MYRMIDON(
-            EAspect.COMBAT, EAspect.ART, EArmorType.MEDIUM,
-            setOf(EWeaponStyle.DOUBLE, EWeaponStyle.RANGED),
-            setOf(EWeaponCategory.POLEARM, EWeaponCategory.GLAIVE)
+            EAspect.COMBAT, EAspect.ART
     ),
     WARDEN(
-            EAspect.NATURE, EAspect.ARCANE, EArmorType.MEDIUM,
-            setOf(EWeaponStyle.DOUBLE),
-            setOf(EWeaponCategory.BLADE)
+            EAspect.NATURE, EAspect.ARCANE
     ),
     MYSTIC(
-            EAspect.NATURE, EAspect.SPIRIT, EArmorType.NONE,
-            setOf(EWeaponStyle.DUAL),
-            setOf(EWeaponCategory.BLADE)
+            EAspect.NATURE, EAspect.SPIRIT
     ),
     KESTREL(
-            EAspect.NATURE, EAspect.PSIONIC, EArmorType.LIGHT,
-            setOf(EWeaponStyle.RANGED, EWeaponStyle.SINGLE),
-            setOf(EWeaponCategory.BOW, EWeaponCategory.AXE)
+            EAspect.NATURE, EAspect.PSIONIC
     ),
     AVENGER(
-            EAspect.NATURE, EAspect.SHADOW, EArmorType.LIGHT,
-            setOf(EWeaponStyle.DUAL),
-            setOf(EWeaponCategory.BLADE)
+            EAspect.NATURE, EAspect.SHADOW
     ),
     CELEBRANT(
-            EAspect.NATURE, EAspect.LIGHT, EArmorType.MEDIUM,
-            setOf(EWeaponStyle.DOUBLE),
-            setOf(EWeaponCategory.STAFF)
+            EAspect.NATURE, EAspect.LIGHT
     ),
     STRIDER(
-            EAspect.NATURE, EAspect.ART, EArmorType.LIGHT,
-            setOf(EWeaponStyle.RANGED, EWeaponStyle.SINGLE),
-            setOf(EWeaponCategory.BOW, EWeaponCategory.AXE)
+            EAspect.NATURE, EAspect.ART
     ),
     EIDOLON(
-            EAspect.ARCANE, EAspect.SPIRIT, EArmorType.NONE,
-            setOf(EWeaponStyle.UNARMED),
-            setOf(EWeaponCategory.UNARMED)
+            EAspect.ARCANE, EAspect.SPIRIT
     ),
     RIDDLER(
-            EAspect.ARCANE, EAspect.PSIONIC, EArmorType.NONE,
-            setOf(EWeaponStyle.RANGED, EWeaponStyle.SINGLE),
-            setOf(EWeaponCategory.CROSSBOW, EWeaponCategory.BLADE)
+            EAspect.ARCANE, EAspect.PSIONIC
     ),
     SHIFTER(
-            EAspect.ARCANE, EAspect.SHADOW, EArmorType.NONE,
-            setOf(EWeaponStyle.GREAT),
-            setOf(EWeaponCategory.MAGIC_WEAPON) // magically bound spear
+            EAspect.ARCANE, EAspect.SHADOW
     ),
     ARBITER(
-            EAspect.ARCANE, EAspect.LIGHT, EArmorType.NONE,
-            setOf(EWeaponStyle.DOUBLE),
-            setOf(EWeaponCategory.STAFF)
+            EAspect.ARCANE, EAspect.LIGHT
     ),
     SCRIVENER(
-            EAspect.ARCANE, EAspect.ART, EArmorType.NONE,
-            setOf(EWeaponStyle.RANGED, EWeaponStyle.SINGLE),
-            setOf(EWeaponCategory.GLAIVE, EWeaponCategory.BLADE)
+            EAspect.ARCANE, EAspect.ART
     ),
     REDEEMER(
-            EAspect.SPIRIT, EAspect.PSIONIC, EArmorType.NONE,
-            setOf(EWeaponStyle.DOUBLE),
-            setOf(EWeaponCategory.BLADE)
+            EAspect.SPIRIT, EAspect.PSIONIC
     ),
     WRAITH(
-            EAspect.SPIRIT, EAspect.SHADOW, EArmorType.LIGHT,
-            setOf(EWeaponStyle.GREAT),
-            setOf(EWeaponCategory.SCYTHE)
+            EAspect.SPIRIT, EAspect.SHADOW
     ),
     DIVINER(
-            EAspect.SPIRIT, EAspect.LIGHT, EArmorType.LIGHT,
-            setOf(EWeaponStyle.RANGED, EWeaponStyle.SINGLE),
-            setOf(EWeaponCategory.MAGIC_WEAPON, EWeaponCategory.BLADE) // conjured bow
+            EAspect.SPIRIT, EAspect.LIGHT
     ),
     ARCHON(
-            EAspect.SPIRIT, EAspect.ART, EArmorType.LIGHT,
-            setOf(EWeaponStyle.DOUBLE, EWeaponStyle.SINGLE),
-            setOf(EWeaponCategory.AXE)
+            EAspect.SPIRIT, EAspect.ART
     ),
     SENTINEL(
-            EAspect.PSIONIC, EAspect.SHADOW, EArmorType.LIGHT,
-            setOf(EWeaponStyle.DUAL),
-            setOf(EWeaponCategory.BLADE)
+            EAspect.PSIONIC, EAspect.SHADOW
     ),
     CONFESSOR(
-            EAspect.PSIONIC, EAspect.LIGHT, EArmorType.MEDIUM,
-            setOf(EWeaponStyle.GREAT, EWeaponStyle.RANGED),
-            setOf(EWeaponCategory.BLUNT) // hammer doubles as ranged weapon
+            EAspect.PSIONIC, EAspect.LIGHT
     ),
     REAVER(
-            EAspect.PSIONIC, EAspect.ART, EArmorType.LIGHT,
-            setOf(EWeaponStyle.GREAT),
-            setOf(EWeaponCategory.BLADE)
+            EAspect.PSIONIC, EAspect.ART
     ),
     HERETIC(
-            EAspect.SHADOW, EAspect.LIGHT, EArmorType.NONE,
-            setOf(EWeaponStyle.UNARMED),
-            setOf(EWeaponCategory.UNARMED)
+            EAspect.SHADOW, EAspect.LIGHT
     ),
     LURKER(
-            EAspect.SHADOW, EAspect.ART, EArmorType.LIGHT,
-            setOf(EWeaponStyle.DOUBLE, EWeaponStyle.RANGED),
-            setOf(EWeaponCategory.MAGIC_WEAPON, EWeaponCategory.GLAIVE) // conjured double blade
+            EAspect.SHADOW, EAspect.ART
     ),
     HELLION(
-            EAspect.LIGHT, EAspect.ART, EArmorType.LIGHT,
-            setOf(EWeaponStyle.DUAL),
-            setOf(EWeaponCategory.BLADE)
+            EAspect.LIGHT, EAspect.ART
     )
 }
